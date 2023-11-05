@@ -7,7 +7,7 @@ type Submission = {
 }
 
 const Form = () => {
-  const [success, setSuccess] = useState(true)
+  const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
   const [formData, setFormData] = useState<Submission>({
     name: '', 

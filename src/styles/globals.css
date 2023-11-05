@@ -20,6 +20,11 @@ body {
 
 } */
 
+*, button {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+}
+
 #contact {
   background-image: url('../images/gradient.png');
   background-repeat: no-repeat;
