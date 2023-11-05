@@ -18,6 +18,13 @@ const config: Config = {
       }, 
       backgroundColor: {
         'sandy': '#FDF6EB'
+      }, 
+      colors: {
+        'great-gray': '#a0a09f',
+        'blackish-gray': '#404041'
+      },
+      width: {
+        '87vw': '87vw'
       }
     },
   },

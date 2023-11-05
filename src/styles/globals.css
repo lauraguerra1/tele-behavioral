@@ -22,8 +22,8 @@ body {
 
 body::before {
   content: "";
-  background-image: url('../images/cairn.png');
-  filter: blur(5px);
+  background-image: url('../images/cairn2.png');
+  filter: blur(3px);
   background-repeat: no-repeat;
   position: fixed;
   top: 0;
@@ -37,12 +37,13 @@ body::before {
 *, button {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
+  font-weight: 300;
 }
 
 #contact {
   background-image: url('../images/gradient.png');
   background-repeat: no-repeat;
-  opacity: 80%;
+  opacity: 90%;
 }
 
 .border-r-1 {
@@ -51,4 +52,8 @@ body::before {
 
 .border-b-1 {
   border-bottom-width: 1px
+}
+
+#footer {
+  background: linear-gradient(to bottom, #fdf6ebdf, #fdf6ebb6, #ffffff26);
 }
