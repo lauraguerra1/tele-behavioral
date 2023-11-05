@@ -22,7 +22,7 @@ body {
 
 body::before {
   content: "";
-  background-image: url('../images/cairn2.png');
+  background-image: url('../images/cairn3.jpeg');
   filter: blur(3px);
   background-repeat: no-repeat;
   position: fixed;
@@ -43,7 +43,12 @@ body::before {
 #contact {
   background-image: url('../images/gradient.png');
   background-repeat: no-repeat;
-  opacity: 90%;
+  opacity: 95%;
+}
+
+#intro {
+  background-image: url('../images/marble.jpeg');
+  background-repeat: no-repeat;
 }
 
 .border-r-1 {
@@ -55,5 +60,6 @@ body::before {
 }
 
 #footer {
-  background: linear-gradient(to bottom, #fdf6ebdf, #fdf6ebb6, #ffffff26);
+  background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff26);
+  /* background: linear-gradient(to bottom, #fdf6ebdf, #fdf6ebb6, #ffffff26); */
 }

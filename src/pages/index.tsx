@@ -12,7 +12,7 @@ export default function Home() {
       <section id='nav' className='w-screen bg-white sticky top-0 z-20 border-b-4 border-great-gray p-5'>
         <h1 className='text-5xl text-center text-blackish-gray'>TELE BEHAVIORAL HEALTH</h1>
       </section>
-      <section id='intro' className='w-87vw self-center bg-white h-80 mb-5'>
+      <section id='intro' className='w-87vw self-center bg-cover h-80 mb-5'>
         <p>intro will go here</p>
       </section>
       <section id='philosophy' className='w-screen self-center bg-white h-80 mb-10'>
