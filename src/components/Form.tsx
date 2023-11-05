@@ -7,6 +7,8 @@ type Submission = {
 }
 
 const Form = () => {
+  const [success, setSuccess] = useState(true)
+  const [error, setError] = useState(false)
   const [formData, setFormData] = useState<Submission>({
     name: '', 
     email: '', 
@@ -33,8 +35,10 @@ const Form = () => {
   })
 
   return (
-    <form className='grid grid-cols-2 gap-4 text-white'>
+    <form className='grid grid-cols-2 gap-4 text-white mt-10'>
       {formInputs}
+      <button className="col-span-2">Send</button>
+      <p className={`text-center col-span-2 h-10 ${success? 'text-gray-700' : error ? 'text-red-700' : ''}`}>{success ? 'Success! Message sent.' : error ? 'Whoops! Something went wrong. Please try again.' : ''}</p>
     </form>
   )
 }
