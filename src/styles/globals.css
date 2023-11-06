@@ -50,7 +50,7 @@ body::before {
   opacity: 95%;
 }
 
-#intro {
+#home {
   background-image: url('../images/marble.jpeg');
   background-repeat: no-repeat;
 }
