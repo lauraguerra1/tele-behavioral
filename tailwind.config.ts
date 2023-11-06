@@ -25,6 +25,9 @@ const config: Config = {
       },
       width: {
         '87vw': '87vw'
+      },
+      height: {
+        '650px': '650px'
       }
     },
   },

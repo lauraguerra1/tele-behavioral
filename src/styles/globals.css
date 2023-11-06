@@ -40,6 +40,10 @@ body::before {
   font-weight: 300;
 }
 
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
 #contact {
   background-image: url('../images/gradient.png');
   background-repeat: no-repeat;
