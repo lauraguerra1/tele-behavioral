@@ -18,7 +18,7 @@ const NavBar = ({navOption, updateNavOption}: {navOption: string, updateNavOptio
   })
 
   return (
-    <nav className='flex justify-center'>
+    <nav className='flex justify-center mt-5 text-xs'>
       {navEls}
     </nav>
   )
