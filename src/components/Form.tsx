@@ -11,19 +11,17 @@ type Submission = Indexable & {
 }
 
 const Form = () => {
-  const [success, setSuccess] = useState(false)
-  const [error, setError] = useState(false)
-  const [formData, setFormData] = useState<Submission>({
+  const freshForm: Submission = {
     name: '', 
     email: '', 
     subject: '',
     message: ''
-  })
+  }
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
+  const [formData, setFormData] = useState<Submission>(freshForm)
 
-  useEffect(() => {
-
-    return resetFeedback
-  },[])
+  useEffect(() => resetFeedback,[])
 
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -31,12 +29,7 @@ const Form = () => {
       //await api call work here 
       console.log({ ...formData, subject: `Tele Behavioral${formData.subject.length ? ': ' + formData.subject : ' Contact Request'}` })
       setSuccess(true)
-      setFormData({
-        name: '', 
-        email: '', 
-        subject: '',
-        message: ''
-      })
+      setFormData(freshForm)
     } catch (error) {
       setError(true)
     }
