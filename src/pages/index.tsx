@@ -3,8 +3,8 @@ import Form from '@/components/Form'
 import ContactCard from '@/components/ContactCard'
 import NavBar from '@/components/NavBar'
 import { useEffect, useRef, useState } from 'react';
-import roxanne from '../images/roxanne.png';
-import Image from 'next/image';
+import Philosophy from '@/components/Philosophy';
+import Services from '@/components/Services';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +25,7 @@ export default function Home() {
           setNavOption(entry.target.id);
         }
       });
-    }, {threshold: 0.6});
+    }, {threshold: 0.5});
 
     Object.values(sectionRefs).forEach(ref => {
       if (ref.current) {
@@ -49,21 +49,13 @@ export default function Home() {
         <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>
       </section>
       <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center h-650px'>
-        <div className='flex justify-center'>
-          <div className='w-1/4 flex flex-col justify-between mr-10'>
-            <h2 className='text-4xl mb-10'>INTEGRATIVE MEDICINE</h2>
-            <Image src={roxanne} alt='profile photo of Roxanne Flaherty' className='rounded-full h-40 w-40 mb-20' />
-          </div>
-          <div className='w-1/2 ml-10'>
-            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you. <br /> <br /> This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
-            <p className='italic mt-20 playfair'>"When you touch one thing with deep awareness,
- you touch everything."</p>
-            <p className='playfair'>- Lao Tzu</p>
-          </div>
-        </div>
+        <Philosophy />
       </section>
-      <section ref={sectionRefs.services} id='services' className='w-screen bg-white h-80 mb-10'>
-        <p>services will go here</p>
+      <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-5 px-40 relative'>
+        <Services />
+        <div className='flex items-center justify-center absolute inset-0'>
+          <div className='bg-white h-20 w-20 rounded-full z-20'></div>
+        </div>
       </section>
       <section ref={sectionRefs.contact}  id='contact' className='relative w-screen bg-cover flex justify-around p-10 mb-10'>
         <ContactCard />
