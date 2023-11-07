@@ -51,7 +51,7 @@ export default function Home() {
       <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center h-650px'>
         <Philosophy />
       </section>
-      <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-20 px-40 relative'>
+      <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-5 px-40 relative'>
         <Services />
         <div className='flex items-center justify-center absolute inset-0'>
           <div className='bg-white h-20 w-20 rounded-full z-20'></div>
