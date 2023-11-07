@@ -25,7 +25,7 @@ export default function Home() {
           setNavOption(entry.target.id);
         }
       });
-    }, {threshold: 0.6});
+    }, {threshold: 0.5});
 
     Object.values(sectionRefs).forEach(ref => {
       if (ref.current) {
@@ -51,8 +51,11 @@ export default function Home() {
       <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center h-650px'>
         <Philosophy />
       </section>
-      <section ref={sectionRefs.services} id='services' className='w-screen bg-white h-80 mb-10 grid grid-cols-2 '>
+      <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-20 px-40 relative'>
         <Services />
+        <div className='flex items-center justify-center absolute inset-0'>
+          <div className='bg-white h-20 w-20 rounded-full z-20'></div>
+        </div>
       </section>
       <section ref={sectionRefs.contact}  id='contact' className='relative w-screen bg-cover flex justify-around p-10 mb-10'>
         <ContactCard />
