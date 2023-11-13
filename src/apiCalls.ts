@@ -6,13 +6,17 @@ const handleError = (response: Response) => {
   return response.json()
 }
 export const sendEmail = async (form: Submission) => {
-  const response = await fetch('/api/mail', {
-    method: "POST", 
-    body: JSON.stringify(form),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  const data = await handleError(response)
-  return data
+  try {
+    const response = await fetch('/api/mail', {
+      method: "POST", 
+      body: JSON.stringify(form),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await handleError(response)
+    return data
+  } catch (error) {
+    throw error
+  }
 }
