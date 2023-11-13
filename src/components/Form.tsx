@@ -12,21 +12,21 @@ const Form = () => {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
   const [formData, setFormData] = useState<Submission>(freshForm)
+  const [sending, setSending] = useState(false)
 
   useEffect(() => resetFeedback,[])
 
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setSending(true)
     try {
-      //await api call work here 
-      // console.log({ ...formData, subject: `Tele Behavioral${formData.subject.length ? ': ' + formData.subject : ' Contact Request'}` })
-      const email = await sendEmail({ ...formData, subject: `Tele Behavioral${formData.subject.length ? ': ' + formData.subject : ' Contact Request'}` })
-      console.log('email', email)
+      await sendEmail({ ...formData, subject: `Patient Inquiry${formData.subject.length ? ': ' + formData.subject : ''}`})
       setSuccess(true)
       setFormData(freshForm)
     } catch (error) {
       setError(true)
     }
+    setSending(false)
   }
 
   const resetFeedback = () => {
@@ -55,7 +55,7 @@ const Form = () => {
   return (
     <form onSubmit={submitForm} className='grid grid-cols-2 gap-4 text-white mt-10'>
       {formInputs}
-      <button className="col-span-2">Send</button>
+      {sending? <p className="italic text-center col-span-2">Sending, please wait...</p> : <button className="col-span-2">Send</button>}
       <p className={`text-center col-span-2 h-10 ${success? 'text-gray-700' : error ? 'text-red-700' : ''}`}>{success ? 'Success! Message sent.' : error ? 'Whoops! Something went wrong. Please try again.' : ''}</p>
     </form>
   )

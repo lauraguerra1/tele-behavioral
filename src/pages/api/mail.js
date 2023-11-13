@@ -27,7 +27,11 @@ export default function mail(req, res) {
     from: process.env.MAILER_EMAIL,
     to: process.env.RECEPIENT_EMAIL, 
     subject,
-    text: `Inquiry from ${name}: ${message}`,
+    html:
+      `<h1>New Inquiry from ${name}</h1>
+      <p>${message}</p>
+      <p>Patient email: ${email}</p>
+      `, 
     replyTo: email
   };
 
