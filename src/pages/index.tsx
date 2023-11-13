@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <main className='flex flex-col'>
-      <section id='nav' className='w-screen bg-white sticky top-0 z-20 border-b-4 border-great-gray p-5'>
+      <section id='nav' className='w-screen bg-white sticky top-0 z-50 border-b-4 border-great-gray p-5'>
         <h1 className='text-5xl text-center text-blackish-gray'>TELE BEHAVIORAL HEALTH</h1>
         <NavBar updateNavOption={updateNavOption} navOption={navOption} />
       </section>
