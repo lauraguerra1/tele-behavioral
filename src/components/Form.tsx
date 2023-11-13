@@ -1,14 +1,6 @@
 import { FormEvent, useEffect, useState } from "react"
-type Indexable = {
-  [index:string]: string
-}
-
-type Submission = Indexable & {
-  name: string, 
-  email: string, 
-  subject: string,
-  message: string
-}
+import { Submission } from "@/types"
+import { sendEmail } from "@/apiCalls"
 
 const Form = () => {
   const freshForm: Submission = {
@@ -27,7 +19,9 @@ const Form = () => {
     e.preventDefault()
     try {
       //await api call work here 
-      console.log({ ...formData, subject: `Tele Behavioral${formData.subject.length ? ': ' + formData.subject : ' Contact Request'}` })
+      // console.log({ ...formData, subject: `Tele Behavioral${formData.subject.length ? ': ' + formData.subject : ' Contact Request'}` })
+      const email = await sendEmail({ ...formData, subject: `Tele Behavioral${formData.subject.length ? ': ' + formData.subject : ' Contact Request'}` })
+      console.log('email', email)
       setSuccess(true)
       setFormData(freshForm)
     } catch (error) {
