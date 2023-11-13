@@ -61,6 +61,7 @@ export default function Home() {
       <section ref={sectionRefs.contact}  id='contact' className='relative w-screen bg-cover flex justify-around p-10 mb-10'>
         <ContactCard />
         <Form/>
+        <a id='linkedInMobile' className='hidden bg-sandy text-gray-700 px-4 my-4 py-2 self-start' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>Visit LinkedIn</a>
       </section>
       <section id='footer' className='font-extralight text-blackish-gray  w-screen h-60 p-5 flex flex-col justify-around'>
         <h2 className='text-5xl text-center'>Roxanne Flaherty</h2>

@@ -79,6 +79,7 @@ body::before {
 
   #contact, #philWrapper {
     flex-direction: column;
+    margin-right: none;
   }
 
   #menuBtn {
@@ -96,5 +97,25 @@ body::before {
   .phil-section {
     width: 100%;
     margin: 0;
+  }
+
+  #linkedInDesktop {
+    display: none;
+  }
+
+  #linkedInMobile {
+    display: block;
+    align-self: center
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contactInfo {
+    flex-direction: column;
+  }
+
+  #contactInfo div {
+    padding: 0;
+    border: none;
   }
 }
