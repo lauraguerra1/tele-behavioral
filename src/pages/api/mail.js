@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 
 export default function mail(req, res) {
   const { name, email, subject, message } = req.body
+  console.log('req body', req.body)
   //rememeber to set up error handling for missing parts here 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -17,10 +18,11 @@ export default function mail(req, res) {
   })
 
   const mailOptions = {
-    from: email,
+    from: process.env.MAILER_EMAIL,
     to: process.env.RECEPIENT_EMAIL, 
     subject,
-    text: message
+    text: `Inquiry from ${name}: ${message}`,
+    replyTo: email
   };
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json(mailOptions)
 }
