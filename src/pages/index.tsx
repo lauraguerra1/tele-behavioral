@@ -40,15 +40,16 @@ export default function Home() {
 
   return (
     <main className='flex flex-col'>
-      <section id='nav' className='w-screen bg-white sticky top-0 z-50 border-b-4 border-great-gray p-5'>
+      <header id='nav' className='w-screen bg-white sticky top-0 z-50 border-b-4 border-great-gray p-5'>
         <h1 className='text-5xl text-center text-blackish-gray'>TELE BEHAVIORAL HEALTH</h1>
+        <button id='menuBtn' className='hidden'>Menu</button>
         <NavBar updateNavOption={updateNavOption} navOption={navOption} />
-      </section>
+      </header>
       <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover h-650px mb-5 flex flex-col items-center justify-around py-20'>
         <p className='text-7xl text-center'>PUT YOUR <br/>MIND + BODY + SPIRIT<br/> IN GOOD HANDS</p>
         <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>
       </section>
-      <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center h-650px'>
+      <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center'>
         <Philosophy />
       </section>
       <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-5 px-40 relative'>

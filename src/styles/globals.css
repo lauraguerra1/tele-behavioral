@@ -67,3 +67,34 @@ body::before {
   background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff26);
   /* background: linear-gradient(to bottom, #fdf6ebdf, #fdf6ebb6, #ffffff26); */
 }
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  #home {
+    width: 100vw;
+  }
+
+  #contact, #philWrapper {
+    flex-direction: column;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+
+  #navBar {
+    display: none;
+  }
+
+  header {
+    display: flex;
+  }
+
+  .phil-section {
+    width: 100%;
+    margin: 0;
+  }
+}

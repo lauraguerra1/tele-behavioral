@@ -12,7 +12,7 @@ const ContactCard = () => {
         <p>Email: roxanne@conciergeaprn.com</p>
         </div>
     </div>
-    <a className='bg-sandy text-gray-700 px-4 py-2 self-start' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>Visit LinkedIn</a>
+    <a className='bg-sandy text-gray-700 px-4 my-4 py-2 self-start' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>Visit LinkedIn</a>
   </article>
   )
 }
