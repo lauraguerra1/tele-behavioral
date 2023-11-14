@@ -26,7 +26,7 @@ const config: Config = {
       width: {
         '87vw': '87vw'
       },
-      height: {
+      minHeight: {
         '650px': '650px'
       }
     },
