@@ -45,7 +45,7 @@ export default function Home() {
         <button id='menuBtn' className='hidden'>Menu</button>
         <NavBar updateNavOption={updateNavOption} navOption={navOption} />
       </header>
-      <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover h-650px mb-5 flex flex-col items-center justify-around py-20'>
+      <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around py-20'>
         <p className='text-7xl text-center'>PUT YOUR <br/>MIND + BODY + SPIRIT<br/> IN GOOD HANDS</p>
         <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>
       </section>
@@ -54,7 +54,7 @@ export default function Home() {
       </section>
       <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-5 px-40 relative'>
         <Services />
-        <div className='flex items-center justify-center absolute inset-0'>
+        <div id='serviceSpacer' className='flex items-center justify-center absolute inset-0'>
           <div className='bg-white h-20 w-20 rounded-full z-20'></div>
         </div>
       </section>
