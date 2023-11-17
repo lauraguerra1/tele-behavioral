@@ -67,14 +67,6 @@ body::before {
   background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff4f);
 }
 
-.hidden {
-  display: none;
-}
-
-/* main header, main section {
-  width: 100vw;
-} */
-
 @media screen and (max-width: 1000px) {
   #services{
     padding: 5%;
@@ -109,19 +101,9 @@ body::before {
     margin-right: 0;
   }
 
-  /* #menuBtn {
-    display: block;
-  } */
-
   #menuBtn img {
     min-width: 30px;
   }
-
-  /* header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  } */
 
   h1 {
     font-size: 40px!important;
@@ -195,6 +177,15 @@ body::before {
 
   .name-container, .email-container {
     grid-column: span 2 
+  }
+
+  #navBar {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #navBar button {
+    margin: 0;
   }
 }
 
