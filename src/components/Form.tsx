@@ -46,7 +46,7 @@ const Form = () => {
       <div key={field} className={`${field === 'message' || field === 'subject' ? 'col-span-2 flex-col' : ''} flex border-b-1 border-white ${field}-container`}>
         <label className='pr-2' htmlFor={field}>{`${field.charAt(0).toUpperCase()}${field.slice(1)}${field !== 'subject' ? '*' : ''}`}</label>
         {field !== 'message'
-          ? <input className='focus:outline-none bg-transparent' type={field === 'email' ? 'email' : 'text'} id={field} name={field} onChange={(e) => changeInput(e.target.name, e.target.value)} onFocus={resetFeedback} value={formData[field]} required={field !== 'subject'} />
+          ? <input className='focus:outline-none bg-transparent flex-1' type={field === 'email' ? 'email' : 'text'} id={field} name={field} onChange={(e) => changeInput(e.target.name, e.target.value)} onFocus={resetFeedback} value={formData[field]} required={field !== 'subject'} />
           : <textarea className='focus:outline-none bg-transparent h-32 resize-none' id={field} name={field} onChange={(e) => changeInput(e.target.name, e.target.value)} onFocus={resetFeedback} value={formData[field]} required/>}
       </div>
     )
