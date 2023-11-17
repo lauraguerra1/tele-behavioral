@@ -1,40 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Roxanne Flaherty Behavioral Health
 
-## Getting Started
+Welcome to the Roxanne Flaherty's Behavioral Health services! As a freelance software engineer, I had the proviledge to work with Board Certified Family & Psychiatric Nurse Practitioner, Roxanne Flaherty to build and maintain her private practice website. The platform allows patients to browse her services and easily send inquiries online.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Client Overview](#client-overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+![Screen Shot 2023-11-17 at 5 41 48 PM](https://github.com/lauraguerra1/tele-behavioral/assets/121131581/a4c5f6ba-a980-4268-9f93-ce49a2448673)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Client Overview
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Client Name:** Roxanne Flaherty
+- **Profession:** Family and Psychiatric Nurse Practitioner
+- **Project Goal:** Develop a website for patients to explore services and send inquiries online.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Service Information**: Learn about the range of mental health services offered by Roxanne Flaherty.
+- **Online Inquiry Form**: Easily send inquiries through the user-friendly online contact form.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
+**To view Roxanne Flaherty's mental health services and/or inquire about working with her, visit the live site: [roxanneflaherty.com](roxanneflaherty.com)**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To install the website locally, follow these steps:
 
-## Deploy on Vercel
+1. Clone this repository.
+   ```
+   git clone https://github.com/lauraguerra1/tele-behavioral.git
+   ```
+2. Move into the project directory and install dependencies.
+   ```
+   cd tele-behavioral
+   npm install
+   ```
+3. Open the local repository in your broser.
+   ```
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage 
+- **Visit the live website**: Experience the Roxanne Flaherty Behavioral Health website firsthand by navigating to roxanneflaherty.com.
+- **Explore mental health services**: Take a moment to discover the comprehensive range of mental health services offered on our platform.
+- **Connect with us**: If you're interested in becoming a patient or have inquiries, don't hesitate to reach out! Utilize the user-friendly form to send us your questions and connect with Roxanne Flaherty.
+  
+![Screen Shot 2023-11-17 at 6 03 55 PM](https://github.com/lauraguerra1/tele-behavioral/assets/121131581/a6c6cfb5-8522-4859-88d8-aadf44384070)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies 
+
+This project was crafted with a modern and robust technology stack to ensure optimal performance, security, and a seamless user experience.
+
+- **Frontend**: TypeScript and React 
+  - **Framework**: Next.js, chosen for its ease of handling backend code within the project. 
+- **Backend**: Node.js 
+  - Utilized for seamless integration with the frontend and for enhanced security in email handling, implemented through Nodemailer. 
+- **CSS Framework**: Tailwind CSS
+  - Employed for responsive design, ensuring a visually pleasing and functional experience across all screen sizes.
+
+[![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Nodemailer](https://img.shields.io/badge/-Nodemailer-339933?style=flat&logo=nodemailer&logoColor=white)](https://nodemailer.com/)
