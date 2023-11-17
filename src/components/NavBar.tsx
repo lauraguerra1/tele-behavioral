@@ -3,12 +3,9 @@ import { useState } from "react"
 type NavBarProps = {
   navOption: string,
   updateNavOption: (option: string) => void, 
-  menuOpen: boolean, 
-  smallScreen: boolean,
-  openOrCloseMenu: () => void
 }
 
-const NavBar = ({navOption, updateNavOption, smallScreen, openOrCloseMenu}: NavBarProps) => {
+const NavBar = ({navOption, updateNavOption}: NavBarProps) => {
   
   const scrollTo = (option: string) => {
     const itemToScroll = document.querySelector(`#${option}`)
@@ -21,7 +18,7 @@ const NavBar = ({navOption, updateNavOption, smallScreen, openOrCloseMenu}: NavB
     updateNavOption(option)
   }
   const navEls = ['home', 'philosophy', 'services', 'contact'].map(option => {
-    return <button className={`${navOption === option ? 'text-gray-400' : 'text-black'} mx-5`} key={`nav${option}`} onClick={() => { scrollTo(option); openOrCloseMenu();}}>{option.toUpperCase()}</button>
+    return <button className={`${navOption === option ? 'text-gray-400' : 'text-black'} mx-5`} key={`nav${option}`} onClick={() => scrollTo(option)}>{option.toUpperCase()}</button>
   })
 
   return (
