@@ -1,7 +1,13 @@
 import Link from "next/link"
 import { useState } from "react"
+type NavBarProps = {
+  navOption: string,
+  updateNavOption: (option: string) => void, 
+  menuOpen: boolean, 
+  openOrCloseMenu: () => void
+}
 
-const NavBar = ({navOption, updateNavOption}: {navOption: string, updateNavOption: (option: string) => void }) => {
+const NavBar = ({navOption, updateNavOption, menuOpen, openOrCloseMenu}: NavBarProps) => {
   
   const scrollTo = (option: string) => {
     const itemToScroll = document.querySelector(`#${option}`)
@@ -18,7 +24,7 @@ const NavBar = ({navOption, updateNavOption}: {navOption: string, updateNavOptio
   })
 
   return (
-    <nav id='navBar' className='flex justify-center mt-5 text-xs'>
+    <nav id='navBar' className={`flex ${menuOpen ? 'flex-col' : ''} justify-center mt-5 text-xs`}>
       {navEls}
     </nav>
   )

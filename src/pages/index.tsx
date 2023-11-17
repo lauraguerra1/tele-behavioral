@@ -13,6 +13,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [navOption, setNavOption] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(false)
+
+  const openOrCloseMenu = () => setMenuOpen(prev => !prev)
+  
   const updateNavOption = (option: string) => setNavOption(option);
   const sectionRefs = {
     home: useRef(null),
@@ -20,6 +25,21 @@ export default function Home() {
     services: useRef(null), 
     contact: useRef(null)
   };
+
+  useEffect(() => { 
+    const changeScreenSize = () => {
+      if (window.innerWidth <= 800) {
+        setSmallScreen(true)
+      } else {
+        setSmallScreen(false)
+      }
+    }
+
+    changeScreenSize()
+    window.addEventListener('resize', changeScreenSize)
+
+    return () => window.removeEventListener('resize', changeScreenSize)
+  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -44,9 +64,11 @@ export default function Home() {
   return (
     <main className='flex flex-col'>
       <header id='nav' className='w-screen bg-white sticky top-0 z-50 border-b-4 border-great-gray p-5'>
-        <h1 className='text-5xl text-center text-blackish-gray'>ROXANNE FLAHERTY</h1>
-        <button id='menuBtn' className='hidden ml-2'><Image src={menuBtn} alt={`Menu button`}/></button>
-        <NavBar updateNavOption={updateNavOption} navOption={navOption} />
+        <div className='flex justify-between items-center'>
+          <h1 className={`flex-1 text-5xl ${smallScreen ? '' : 'text-center'} text-blackish-gray`}>ROXANNE FLAHERTY</h1>
+          {smallScreen && <button onClick={openOrCloseMenu} id='menuBtn' className='ml-2'><Image src={menuOpen ? closeBtn : menuBtn} alt={`${menuOpen? 'close' : 'open'} menu button`}/></button>}
+        </div>
+        {(!smallScreen || menuOpen) && <NavBar updateNavOption={updateNavOption} navOption={navOption} menuOpen={menuOpen} openOrCloseMenu={openOrCloseMenu} />}
       </header>
       <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around py-20'>
         <p id='openingText' className='text-7xl text-center'>PUT YOUR <br />MIND + BODY + SPIRIT<br /> IN GOOD HANDS</p>
