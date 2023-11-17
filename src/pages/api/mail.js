@@ -18,9 +18,60 @@ export default function mail(req, res) {
     to: process.env.RECEPIENT_EMAIL, 
     subject,
     html:
-      `<h1>New Inquiry from ${name}</h1>
-      <p>${message}</p>
-      <p>Patient email: ${email}</p>
+      `<html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            body {
+              font-family: 'Josefin Sans', sans-serif;
+              margin: 20px;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              color: #333;
+            }
+    
+            h1 {
+              font-family: 'Josefin Sans', sans-serif;
+              color: #5e503f;
+              text-align: center;
+            }
+    
+            p {
+              margin: 10px 0;
+            }
+    
+            .patient-info {
+              font-family: 'Josefin Sans', sans-serif;
+              background-color: #ffffff;
+              padding: 15px;    
+            }
+    
+            .header-image {
+              width: 100%;
+              max-width: 400px;
+              margin: 0 auto;
+            }
+            
+            .flex-center {
+              display: flex;
+              justify-content: center;
+            }
+          </style>
+      </head>
+      <body>
+        <div class='flex-center'>
+          <img src="https://i.imgur.com/I7wCc2X.png" alt="Header Image" class="header-image">
+        </div>
+        <div class="patient-info">
+          <h1>New Inquiry from ${name}</h1>
+          <p>Here's a message from the patient:</p>
+          <p>${message}</p>
+          <p>Patient Email: ${email}</p>
+        </div>
+      </body> 
+      </html>
       `, 
     replyTo: email
   };
