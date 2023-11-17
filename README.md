@@ -5,9 +5,8 @@ Welcome to the Roxanne Flaherty's Behavioral Health services! As a freelance sof
 ## Table of Contents
 
 - [Client Overview](#client-overview)
-- [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
+- [Installation](#installation)
 - [Technologies](#technologies)
 
 
@@ -19,20 +18,19 @@ Welcome to the Roxanne Flaherty's Behavioral Health services! As a freelance sof
 - **Profession:** Family and Psychiatric Nurse Practitioner
 - **Project Goal:** Develop a website for patients to explore services and send inquiries online.
 
-
-## Features
-
-- **Service Information**: Learn about the range of mental health services offered by Roxanne Flaherty.
-- **Online Inquiry Form**: Easily send inquiries through the user-friendly online contact form.
+## Usage 
+- **Visit the live website**: Experience the Roxanne Flaherty Behavioral Health website firsthand by navigating to [roxanneflaherty.com](https://www.roxanneflaherty.com/).
+- **Explore mental health services**: Take a moment to discover the comprehensive range of mental health services offered.
+- **Get connected**: If you're interested in becoming a patient or have inquiries, don't hesitate to reach out! Utilize the user-friendly form to send your questions and connect with Roxanne Flaherty.
+  
+![Screen Shot 2023-11-17 at 6 03 55 PM](https://github.com/lauraguerra1/tele-behavioral/assets/121131581/a6c6cfb5-8522-4859-88d8-aadf44384070)
 
 ## Installation
-**To view Roxanne Flaherty's mental health services and/or inquire about working with her, visit the live site: [roxanneflaherty.com](roxanneflaherty.com)**
-
-To install the website locally, follow these steps:
+To install the project locally, follow these steps:
 
 1. Clone this repository.
    ```
-   git clone https://github.com/lauraguerra1/tele-behavioral.git
+   git clone git@github.com:lauraguerra1/tele-behavioral.git
    ```
 2. Move into the project directory and install dependencies.
    ```
@@ -43,14 +41,6 @@ To install the website locally, follow these steps:
    ```
    npm run dev
    ```
-
-## Usage 
-- **Visit the live website**: Experience the Roxanne Flaherty Behavioral Health website firsthand by navigating to roxanneflaherty.com.
-- **Explore mental health services**: Take a moment to discover the comprehensive range of mental health services offered on our platform.
-- **Connect with us**: If you're interested in becoming a patient or have inquiries, don't hesitate to reach out! Utilize the user-friendly form to send us your questions and connect with Roxanne Flaherty.
-  
-![Screen Shot 2023-11-17 at 6 03 55 PM](https://github.com/lauraguerra1/tele-behavioral/assets/121131581/a6c6cfb5-8522-4859-88d8-aadf44384070)
-
 ## Technologies 
 
 This project was crafted with a modern and robust technology stack to ensure optimal performance, security, and a seamless user experience.
