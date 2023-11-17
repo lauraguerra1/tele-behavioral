@@ -46,7 +46,7 @@ export default function Home() {
         <NavBar updateNavOption={updateNavOption} navOption={navOption} />
       </header>
       <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around py-20'>
-        <p className='text-7xl text-center'>PUT YOUR <br/>MIND + BODY + SPIRIT<br/> IN GOOD HANDS</p>
+        <p id='openingText' className='text-7xl text-center'>PUT YOUR <br />MIND + BODY + SPIRIT<br /> IN GOOD HANDS</p>
         <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>
       </section>
       <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center'>
