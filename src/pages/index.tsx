@@ -5,6 +5,9 @@ import NavBar from '@/components/NavBar'
 import { useEffect, useRef, useState } from 'react';
 import Philosophy from '@/components/Philosophy';
 import Services from '@/components/Services';
+import Image from 'next/image';
+import menuBtn from '../images/menu.png';
+import closeBtn from '../images/close.png';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,7 +45,7 @@ export default function Home() {
     <main className='flex flex-col'>
       <header id='nav' className='w-screen bg-white sticky top-0 z-50 border-b-4 border-great-gray p-5'>
         <h1 className='text-5xl text-center text-blackish-gray'>ROXANNE FLAHERTY</h1>
-        <button id='menuBtn' className='hidden ml-2'>Menu</button>
+        <button id='menuBtn' className='hidden ml-2'><Image src={menuBtn} alt={`Menu button`}/></button>
         <NavBar updateNavOption={updateNavOption} navOption={navOption} />
       </header>
       <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around py-20'>

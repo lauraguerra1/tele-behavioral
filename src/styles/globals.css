@@ -68,7 +68,7 @@ body::before {
 }
 
 #footer {
-  background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff26);
+  background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff4f);
 }
 
 .hidden {
@@ -117,9 +117,14 @@ body::before {
     display: block;
   }
 
+  #menuBtn img {
+    min-width: 30px;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   /* #navBar {
@@ -228,5 +233,17 @@ body::before {
 
   #openingText{
     font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 250px){
+  #nav {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  #nav h1 {
+    text-align: center;
   }
 }
