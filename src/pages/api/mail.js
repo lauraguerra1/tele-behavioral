@@ -62,7 +62,7 @@ export default function mail(req, res) {
       </head>
       <body>
         <div class='flex-center'>
-          <img src="https://i.imgur.com/qHvGjNV.png" alt="Header Image" class="header-image">
+          <img src="https://i.imgur.com/I7wCc2X.png" alt="Header Image" class="header-image">
         </div>
         <div class="patient-info">
           <h1>New Inquiry from ${name}</h1>
