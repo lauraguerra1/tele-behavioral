@@ -64,6 +64,163 @@ body::before {
 }
 
 #footer {
-  background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff26);
-  /* background: linear-gradient(to bottom, #fdf6ebdf, #fdf6ebb6, #ffffff26); */
+  background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff4f);
+}
+
+@media screen and (max-width: 1000px) {
+  #services{
+    padding: 5%;
+  }
+
+  #philWrapper {
+    flex-direction: column;
+  }
+
+  .phil-section {
+    width: 100%;
+    margin: 0;
+  }
+
+  .top-phil {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #home {
+    width: 100vw;
+  }
+
+  #contact {
+    flex-direction: column;
+    margin-right: none;
+  }
+
+  #contact article {
+    margin-right: 0;
+  }
+
+  #menuBtn img {
+    min-width: 30px;
+  }
+
+  h1 {
+    font-size: 40px!important;
+  }
+
+  #linkedInDesktop, #serviceSpacer {
+    display: none;
+  }
+
+  #linkedInMobile {
+    display: block;
+    align-self: center
+  }
+
+  #services {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .single-service {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contactInfo {
+    flex-direction: column;
+  }
+
+  #contactInfo div {
+    padding: 0;
+    border: none;
+  }
+
+  article h2 {
+    font-size: 60px!important;
+    margin: 0;
+  }
+
+  .single-service {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #footer h2 {
+    font-size: 40px;
+  }
+
+  #footer h3 {
+    font-size: 30px;
+  }
+
+  #footer {
+    height: auto;
+  }
+
+  #openingText{
+    font-size: 50px;
+  }
+
+  h1 {
+    font-size: 30px!important;
+  }
+
+}
+
+@media screen and (max-width: 545px) {
+  article h2 {
+    font-size: 40px!important;
+  }
+
+  .name-container, .email-container {
+    grid-column: span 2 
+  }
+
+  #navBar {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #navBar button {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+
+  #nav h1 {
+    text-align: start;
+  }
+
+  article h2 {
+    font-size: 8vw!important;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  article h2 {
+    font-size: 25px!important;
+  }
+
+  #contact {
+    padding: 10px 8px; 
+  }
+
+  #openingText{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 250px){
+  #nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nav h1 {
+    text-align: center;
+  }
 }
