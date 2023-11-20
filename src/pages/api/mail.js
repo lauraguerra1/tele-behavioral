@@ -121,13 +121,4 @@ export default function mail(req, res) {
     }
   })
 
-  // transporter.sendMail(adminMailOptions, (error, info) => {
-  //   if (error) {
-  //     res.status(500).json(error)
-  //   } else {
-  //     res.status(200).json({message: info.response})
-  //   }
-  // })
-
-  
 }
