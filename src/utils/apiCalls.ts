@@ -1,4 +1,4 @@
-import { Submission } from "./types";
+import { Submission } from "../types";
 const handleError = (response: Response) => {
   if (!response.ok) {
     throw new Error(`Error: ${response.status} -- Please try again.`)
