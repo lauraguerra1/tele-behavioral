@@ -38,6 +38,13 @@ export default function Home() {
     changeScreenSize()
     window.addEventListener('resize', changeScreenSize)
 
+    console.log(
+      '%cWebsite created and maintained by LGG Web Services.\n\n' +
+      '💻 Looking for a skilled web developer? Let\'s chat!\n\n' +
+      '🌐 Explore my portfolio: https://www.lauragarciaguerra.com',
+      'font-size: 14px; line-height: 1.5;'
+    );
+    
     return () => window.removeEventListener('resize', changeScreenSize)
   }, [])
 
