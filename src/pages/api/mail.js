@@ -89,76 +89,18 @@ export default function mail(req, res) {
     to: email, 
     subject,
     text: `Thank You For Your Inquiry! \nDear ${name}, \nI appreciate you taking the time to contact me with your inquiry. Your message is important to me, and I want to ensure you receive the attention it deserves. \nPlease be advised that this email address is not monitored on a constant basis and is not an emergency hotline. If you are experiencing a mental health emergency or need immediate assistance, please contact your local emergency services. \nI strive to provide the best possible care to each individual, and I understand the importance of timely responses. Rest assured that I have received your message, and I will make every effort to get back to you within 48-72 hours. \nIn the meantime, if your matter requires urgent attention, I strongly recommend reaching out to the appropriate emergency services in your area. Thank you for your understanding and patience. I look forward to assisting you. \nBest regards, \nRoxanne Flaherty \nDNP, PMHNP-BC, FNP-C \nTel: 323-433-9935 \nEmail: admin@roxanneflaherty.com`,
-    html:
-      `<html>
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-        <style>
-          * {
-            font-family: 'Playfair Display', serif;
-          }
-          
-          body {
-            margin: 20px;
-            padding: 20px;
-          }
-    
-          h1 {
-            color: #5e503f;
-            text-align: center;
-          }
-    
-          p {
-            margin: 10px 0;
-          }
-    
-          .patient-info {
-            background-color: #a7b0a761;
-            padding: 15px;  
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          }
-    
-          .header-image {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-          }
-          
-          .flex-center {
-            display: flex;
-            justify-content: center;
-          }
-        </style>
-      </head>
-      <body>
-        <div class='flex-center'>
-          <img src="https://i.imgur.com/UuOpVoV.png" alt="Header Image" class="header-image">
-        </div>
-        <div class="patient-info">
-          <h1>Thank You For Your Inquiry!</h1>
-          <p>Dear [name here],<br></br>
-    
-          I appreciate you taking the time to contact me with your inquiry. Your message is important to me, and I want to ensure you receive the attention it deserves.</p>
-          
-          <p>Please be advised that this email address is not monitored on a constant basis and is not an emergency hotline. If you are experiencing a mental health emergency or need immediate assistance, please contact your local emergency services.</p>
-          
-          <p>I strive to provide the best possible care to each individual, and I understand the importance of timely responses. Rest assured that I have received your message, and I will make every effort to get back to you within 48-72 hours.</p>
-          
-          <p>In the meantime, if your matter requires urgent attention, I strongly recommend reaching out to the appropriate emergency services in your area. Thank you for your understanding and patience. I look forward to assisting you.</p>
-          
-          <p>Best regards,<br>Roxanne Flaherty<br/>
-          DNP, PMHNP-BC, FNP-C<br/>
-          Tel: 323-433-9935<br/>
-          Email: admin@roxanneflaherty.com</p>
-        </div>
-      </body> 
-    </html>
-    `, 
+    html:createEmail(
+      'https://i.imgur.com/UuOpVoV.png',
+      `<h1>Thank You For Your Inquiry!</h1>
+      <p>Dear ${name}, <br></br>I appreciate you taking the time to contact me with your inquiry. Your message is important to me, and I want to ensure you receive the attention it deserves.</p>
+      <p>Please be advised that this email address is not monitored on a constant basis and is not an emergency hotline. If you are experiencing a mental health emergency or need immediate assistance, please contact your local emergency services.</p>
+      <p>I strive to provide the best possible care to each individual, and I understand the importance of timely responses. Rest assured that I have received your message, and I will make every effort to get back to you within 48-72 hours.</p>
+      <p>In the meantime, if your matter requires urgent attention, I strongly recommend reaching out to the appropriate emergency services in your area. Thank you for your understanding and patience. I look forward to assisting you.</p>
+      <p>Best regards,<br>Roxanne Flaherty<br/>
+      DNP, PMHNP-BC, FNP-C<br/>
+      Tel: 323-433-9935<br/>
+      Email: admin@roxanneflaherty.com</p>`
+    ), 
     replyTo: process.env.MAILER_EMAIL
   };
 
