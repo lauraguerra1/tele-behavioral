@@ -14,7 +14,7 @@ Welcome to the Roxanne Flaherty's Behavioral Health services! As a freelance sof
 
 ## Client Overview
 
-- **Client Name:** Roxanne Flaherty
+- **Client Name:** Roxanne Flaherty Behavioral Health Services
 - **Profession:** Family and Psychiatric Nurse Practitioner
 - **Project Goal:** Develop a website for patients to explore services and send inquiries online.
 
@@ -22,8 +22,8 @@ Welcome to the Roxanne Flaherty's Behavioral Health services! As a freelance sof
 - **Visit the live website**: Experience the Roxanne Flaherty Behavioral Health website firsthand by navigating to [roxanneflaherty.com](https://www.roxanneflaherty.com/).
 - **Explore mental health services**: Take a moment to discover the comprehensive range of mental health services offered.
 - **Get connected**: If you're interested in becoming a patient or have inquiries, don't hesitate to reach out! Utilize the user-friendly form to send your questions and connect with Roxanne Flaherty.
-  
-![Screen Shot 2023-11-17 at 6 03 55 PM](https://github.com/lauraguerra1/tele-behavioral/assets/121131581/a6c6cfb5-8522-4859-88d8-aadf44384070)
+
+![Screen Shot 2023-11-20 at 11 22 13 AM](https://github.com/lauraguerra1/tele-behavioral/assets/121131581/5ae9983f-1707-476e-9628-db187a72f1b6)
 
 ## Installation
 To install the project locally, follow these steps:
