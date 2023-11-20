@@ -199,6 +199,18 @@ body::before {
   article h2 {
     font-size: 8vw!important;
   }
+
+  #footer h2 {
+    font-size: xx-large;
+  }
+
+  #footer h3 {
+    font-size: x-large;
+  }
+
+  #footer p {
+    font-size: large;
+  }
 }
 
 @media screen and (max-width: 300px) {
