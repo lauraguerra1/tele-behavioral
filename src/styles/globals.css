@@ -136,6 +136,7 @@ body::before {
   #contactInfo div {
     padding: 0;
     border: none;
+    margin: 0;
   }
 
   article h2 {
@@ -197,6 +198,18 @@ body::before {
 
   article h2 {
     font-size: 8vw!important;
+  }
+
+  #footer h2 {
+    font-size: xx-large;
+  }
+
+  #footer h3 {
+    font-size: x-large;
+  }
+
+  #footer p {
+    font-size: large;
   }
 }
 

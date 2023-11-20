@@ -4,19 +4,19 @@ const Services = () => {
   const services = [
     {
       name: "Addiction Recovery", 
-      description: "Im a paragraph. Click here to add your own text and edit me. Its easy. Just click or double click me to add your own content and make changes to the font."
+      description: "Service description coming soon!"
     }, 
     {
       name: "Hypnotherapy", 
-      description: "Im a paragraph. Click here to add your own text and edit me. Its easy. Just click or double click me to add your own content and make changes to the font."
+      description: "Service description coming soon!"
     }, 
     {
       name: "Behavioral Health", 
-      description: "Im a paragraph. Click here to add your own text and edit me. Its easy. Just click or double click me to add your own content and make changes to the font."
+      description: "Service description coming soon!"
     },
     {
       name: "Alternative Medicine", 
-      description: "Im a paragraph. Click here to add your own text and edit me. Its easy. Just click or double click me to add your own content and make changes to the font."
+      description: "Service description coming soon!"
     }
   ]
   const serviceEls = services.map((service, index) => <SingleService key={service.name} name={service.name} description={service.description} index={index} />)

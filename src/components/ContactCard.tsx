@@ -9,9 +9,9 @@ const ContactCard = () => {
           <p>States servicing:</p>
           <p>CA, NY, FL & IL</p>
         </div>
-        <div className='h-20 pl-5 flex flex-col justify-center break-words'>
+        <div className='h-20 pl-5 flex flex-col justify-center break-words my-5'>
           <p>Tel: 323-433-9935</p>
-          <p>Email: roxanne@conciergeaprn.com</p>
+          <p>Email: admin@roxanneflaherty.com</p>
         </div>
     </div>
     <a id='linkedInDesktop' className='bg-sandy text-gray-700 px-4 my-4 py-2 self-start' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>Visit LinkedIn</a>
