@@ -129,7 +129,7 @@ body::before {
 }
 
 @media screen and (max-width: 600px) {
-  #contactInfo {
+  #contactInfo section {
     flex-direction: column;
   }
 
