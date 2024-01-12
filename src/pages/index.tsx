@@ -8,6 +8,7 @@ import Services from '@/components/Services';
 import Image from 'next/image';
 import menuBtn from '../images/menu.png';
 import closeBtn from '../images/close.png';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,6 +74,12 @@ export default function Home() {
   }, []);
 
   return (
+    <>   
+    <Head>
+      <title>Roxanne Flaherty</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name='description' content='Roxanne Flaherty is a Board Certified Family and Psychiatric Nurse Practitioner, offering a wide range of mental health services.' />
+    </Head>
     <main className='flex flex-col'>
       <header id='nav' className='w-screen bg-white sticky top-0 z-50 border-b-4 border-great-gray p-5'>
         <div className='flex justify-between items-center'>
@@ -105,5 +112,6 @@ export default function Home() {
         <p className='text-xl text-center'>DNP, PMHNP-BC, FNP-C</p>
       </section>
     </main>
+    </>
   )
 }
