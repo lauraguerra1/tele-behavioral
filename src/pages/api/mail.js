@@ -109,10 +109,12 @@ export default function mail(req, res) {
 
   transporter.sendMail(adminMailOptions, (error) => {
     if (error) {
+      console.log('error sending mail to admin', error)
       res.status(500).json(error)
     } else {
       transporter.sendMail(patientMailOptions, (err, info) => {
         if (err) {
+          console.log('error sending mail to patient', error)
           res.status(500).json(err)
         } else {
           res.status(200).json({message: info.response})
