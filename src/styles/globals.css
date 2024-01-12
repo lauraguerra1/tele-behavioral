@@ -87,12 +87,13 @@ body::before {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   #home {
     width: 100vw;
   }
 
   #contact {
+    display: flex;
     flex-direction: column;
     margin-right: none;
   }
@@ -109,13 +110,8 @@ body::before {
     font-size: 40px!important;
   }
 
-  #linkedInDesktop, #serviceSpacer {
+  #serviceSpacer {
     display: none;
-  }
-
-  #linkedInMobile {
-    display: block;
-    align-self: center
   }
 
   #services {

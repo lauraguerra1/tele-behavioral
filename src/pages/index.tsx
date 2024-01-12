@@ -101,10 +101,12 @@ export default function Home() {
           <div className='bg-white h-20 w-20 rounded-full z-20'></div>
         </div>
       </section>
-      <section ref={sectionRefs.contact}  id='contact' className='relative w-screen bg-cover flex justify-around p-10 mb-10'>
+      <section ref={sectionRefs.contact}  id='contact' className='relative w-screen bg-cover grid grid-cols-2 p-10 mb-10'>
         <ContactCard />
         <Form/>
-        <a id='linkedInMobile' className='hidden bg-sandy text-gray-700 px-4 my-4 py-2 self-start' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>Visit LinkedIn</a>
+        <div className='col-span-2 flex flex-col md:flex-row justify-around py-5'>
+          <iframe className='w-full h-64 rounded-md max-w-screen' loading="lazy" width="600" height="450" src="https://maps.google.com/maps?q=11400%20West%20Olympic%20Boulevard%20Los%20Angeles%2C%20CA%2091404&t=m&z=8&output=embed&iwloc=near" allowFullScreen />
+        </div>
       </section>
       <section id='footer' className='font-extralight text-blackish-gray  w-screen h-60 p-5 flex flex-col justify-around'>
         <h2 className='text-5xl text-center'>Roxanne Flaherty</h2>
