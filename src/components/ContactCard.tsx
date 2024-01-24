@@ -8,7 +8,7 @@ const ContactCard = () => {
         <section className="flex">
         <div className='h-20 pr-5 border-r-1 border-white flex flex-col justify-center my-5'>
           <p>States servicing:</p>
-          <p>CA, NY, & FL</p>
+          <p>CA & FL</p>
         </div>
         <div className='h-20 pl-5 flex flex-col justify-center break-words my-5'>
           <p>Tel: 323-433-9935</p>
@@ -16,6 +16,7 @@ const ContactCard = () => {
         </div>
         </section>
         <p>Address: <br/> 11400 West Olympic Blvd Suite 200 <br /> Los Angeles, CA 90064</p>
+        <p className='mt-2 italic'>Services coming soon in NY & WA</p>
     </div>
     <a id='linkedInDesktop' className='bg-sandy text-gray-700 px-4 my-4 py-2 self-start' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>Visit LinkedIn</a>
   </article>
