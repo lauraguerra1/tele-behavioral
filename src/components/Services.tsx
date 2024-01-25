@@ -3,19 +3,27 @@ import SingleService from "./SingleService"
 const Services = () => {
   const services = [
     {
-      name: "Addiction Recovery", 
-      description: "Service description coming soon!"
-    }, 
-    {
-      name: "Hypnotherapy", 
-      description: "Service description coming soon!"
-    }, 
-    {
       name: "Behavioral Health", 
       description: "Service description coming soon!"
     },
     {
-      name: "Alternative Medicine", 
+      name: "Integrative Psychiatry", 
+      description: "Service description coming soon!"
+    }, 
+    {
+      name: "Habits & Lifestyle", 
+      description: "Service description coming soon!"
+    }, 
+    {
+      name: "Supplementation", 
+      description: "Service description coming soon!"
+    }, 
+    {
+      name: "Mind, Body & Biology", 
+      description: "Service description coming soon!"
+    }, 
+    {
+      name: "Spirituality", 
       description: "Service description coming soon!"
     }
   ]
