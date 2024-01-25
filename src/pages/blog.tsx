@@ -1,6 +1,6 @@
 import { AppProps } from '@/types';
 
-export default function Blog({ smallScreen, menuOpen, navOption, sectionRefs, openOrCloseMenu, updateNavOption}: AppProps) {
+export default function Blog({ smallScreen, menuOpen, openOrCloseMenu}: AppProps) {
 
   return (
     <>   

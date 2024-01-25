@@ -1,16 +1,41 @@
-import { Inter } from 'next/font/google'
-import Form from '@/components/Form'
-import ContactCard from '@/components/ContactCard'
-import NavBar from '@/components/NavBar'
+import Form from '@/components/Form';
+import ContactCard from '@/components/ContactCard';
 import Philosophy from '@/components/Philosophy';
 import Services from '@/components/Services';
-import Image from 'next/image';
-import menuBtn from '../images/menu.png';
-import closeBtn from '../images/close.png';
 import Head from 'next/head';
 import { AppProps } from '@/types';
+import Header from '@/components/Header';
+import { useEffect, useRef, useState } from 'react';
 
-export default function Home({ smallScreen, menuOpen, navOption, sectionRefs, openOrCloseMenu, updateNavOption}: AppProps) {
+export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps) {
+  const [navOption, setNavOption] = useState('home');
+  const updateNavOption = (option: string) => setNavOption(option);
+  const sectionRefs = {
+    home: useRef(null),
+    philosophy: useRef(null),
+    services: useRef(null), 
+    contact: useRef(null)
+  };
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setNavOption(entry.target.id);
+        }
+      });
+    }, {threshold: 0.5});
+
+    Object.values(sectionRefs).forEach(ref => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <>   
@@ -20,13 +45,13 @@ export default function Home({ smallScreen, menuOpen, navOption, sectionRefs, op
       <meta name='description' content='Roxanne Flaherty is a Board Certified Family and Psychiatric Nurse Practitioner, offering a wide range of mental health services.' />
     </Head>
     <main className='flex flex-col'>
-      <header id='nav' className='w-screen bg-white sticky top-0 z-50 border-b-4 border-great-gray p-5'>
-        <div className='flex justify-between items-center'>
-          <h1 className={`flex-1 text-5xl ${smallScreen ? '' : 'text-center'} text-blackish-gray`}>ROXANNE FLAHERTY</h1>
-          {smallScreen && <button onClick={openOrCloseMenu} id='menuBtn' className='ml-2'><Image src={menuOpen ? closeBtn : menuBtn} alt={`${menuOpen? 'close' : 'open'} menu button`}/></button>}
-        </div>
-        {(!smallScreen || menuOpen) && <NavBar updateNavOption={updateNavOption} navOption={navOption}/>}
-      </header>
+      <Header
+        smallScreen={smallScreen}
+        menuOpen={menuOpen}
+        navOption={navOption}
+        openOrCloseMenu={openOrCloseMenu}
+        updateNavOption={updateNavOption}
+      />
       <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around py-20'>
         <p id='openingText' className='text-7xl text-center'>PUT YOUR <br />MIND + BODY + SPIRIT<br /> IN GOOD HANDS</p>
         <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>

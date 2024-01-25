@@ -14,13 +14,5 @@ export type Submission = Indexable & {
 export type AppProps = {
   smallScreen: boolean,
   menuOpen: boolean,
-  navOption: string,
-  sectionRefs: {
-    home: MutableRefObject<null>;
-    philosophy: MutableRefObject<null>;
-    services: MutableRefObject<null>;
-    contact: MutableRefObject<null>;
-  },
   openOrCloseMenu: () => void,
-  updateNavOption: (option: string) => void,
 }

@@ -4,19 +4,10 @@ import { useState } from 'react';
 import { useRef, useEffect } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [navOption, setNavOption] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
   const [smallScreen, setSmallScreen] = useState(false)
 
   const openOrCloseMenu = () => setMenuOpen(prev => !prev)
-  
-  const updateNavOption = (option: string) => setNavOption(option);
-  const sectionRefs = {
-    home: useRef(null),
-    philosophy: useRef(null),
-    services: useRef(null), 
-    contact: useRef(null)
-  };
 
   useEffect(() => { 
     const changeScreenSize = () => {
@@ -44,34 +35,13 @@ export default function App({ Component, pageProps }: AppProps) {
     setMenuOpen(false)
   }, [smallScreen])
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setNavOption(entry.target.id);
-        }
-      });
-    }, {threshold: 0.5});
 
-    Object.values(sectionRefs).forEach(ref => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
   return (
     <Component
       {...pageProps}
       smallScreen={smallScreen}
       menuOpen={menuOpen}
-      navOption={navOption}
-      sectionRefs={sectionRefs}
       openOrCloseMenu={openOrCloseMenu}
-      updateNavOption={updateNavOption}
     />
   )
 }
