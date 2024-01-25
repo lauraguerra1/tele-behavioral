@@ -63,11 +63,12 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps
       </section>
       <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-5 px-40 relative'>
         <Services />
-        <div id='serviceSpacer' className='flex items-center justify-center absolute inset-0'>
-          <div className='bg-white h-20 w-20 rounded-full z-20'></div>
+        <div id='serviceSpacer' className='absolute inset-0 flex items-center justify-around'>
+          <div className='bg-white h-20 w-20 rounded-full z-20' style={{ position: 'absolute', top: '35%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+          <div className='bg-white h-20 w-20 rounded-full z-20' style={{ position: 'absolute', top: '65%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
         </div>
-        </section>
-        <div className='w-screen self-center bg-white bg-opacity-70 mb-10 p-20 flex items-center justify-center'>
+      </section>
+      <div className='w-screen self-center bg-white bg-opacity-70 mb-10 p-20 flex items-center justify-center'>
         <article className='border-l-2 pl-5 border-black'>
           <p className='italic playfair text-xl'>&quot;When you touch one thing with deep awareness,<br />you touch everything.&quot;</p>
           <p className='playfair text-lg'>- Lao Tzu</p>   
