@@ -2,76 +2,15 @@ import { Inter } from 'next/font/google'
 import Form from '@/components/Form'
 import ContactCard from '@/components/ContactCard'
 import NavBar from '@/components/NavBar'
-import { useEffect, useRef, useState } from 'react';
 import Philosophy from '@/components/Philosophy';
 import Services from '@/components/Services';
 import Image from 'next/image';
 import menuBtn from '../images/menu.png';
 import closeBtn from '../images/close.png';
 import Head from 'next/head';
+import { AppProps } from '@/types';
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
-  const [navOption, setNavOption] = useState('home');
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [smallScreen, setSmallScreen] = useState(false)
-
-  const openOrCloseMenu = () => setMenuOpen(prev => !prev)
-  
-  const updateNavOption = (option: string) => setNavOption(option);
-  const sectionRefs = {
-    home: useRef(null),
-    philosophy: useRef(null),
-    services: useRef(null), 
-    contact: useRef(null)
-  };
-
-  useEffect(() => { 
-    const changeScreenSize = () => {
-      if (window.innerWidth <= 800) {
-        setSmallScreen(true)
-      } else {
-        setSmallScreen(false)
-      }
-    }
-
-    changeScreenSize()
-    window.addEventListener('resize', changeScreenSize)
-
-    console.log(
-      '%cWebsite created and maintained by LGG Web Services.\n\n' +
-      '💻 Looking for a skilled web developer? Let\'s chat!\n\n' +
-      '🌐 Explore my portfolio: https://www.lauragarciaguerra.com',
-      'font-size: 14px; line-height: 1.5;'
-    );
-    
-    return () => window.removeEventListener('resize', changeScreenSize)
-  }, [])
-
-  useEffect(() => {
-    setMenuOpen(false)
-  }, [smallScreen])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setNavOption(entry.target.id);
-        }
-      });
-    }, {threshold: 0.5});
-
-    Object.values(sectionRefs).forEach(ref => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+export default function Home({ smallScreen, menuOpen, navOption, sectionRefs, openOrCloseMenu, updateNavOption}: AppProps) {
 
   return (
     <>   
