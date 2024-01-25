@@ -124,6 +124,17 @@ body::before {
   }
 }
 
+@media screen and (max-width: 630px) {
+  #navBar {
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  #navBar button {
+    margin: 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #contactInfo section {
     flex-direction: column;
@@ -164,7 +175,6 @@ body::before {
   h1 {
     font-size: 30px!important;
   }
-
 }
 
 @media screen and (max-width: 545px) {
@@ -176,14 +186,6 @@ body::before {
     grid-column: span 2 
   }
 
-  #navBar {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  #navBar button {
-    margin: 0;
-  }
 }
 
 @media screen and (max-width: 410px) {
