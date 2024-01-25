@@ -66,7 +66,13 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps
         <div id='serviceSpacer' className='flex items-center justify-center absolute inset-0'>
           <div className='bg-white h-20 w-20 rounded-full z-20'></div>
         </div>
-      </section>
+        </section>
+        <div className='w-screen self-center bg-white bg-opacity-70 mb-10 p-20 flex items-center justify-center'>
+        <article className='border-l-2 pl-5 border-black'>
+          <p className='italic playfair text-xl'>&quot;When you touch one thing with deep awareness,<br />you touch everything.&quot;</p>
+          <p className='playfair text-lg'>- Lao Tzu</p>   
+        </article>
+      </div>
       <section ref={sectionRefs.contact}  id='contact' className='relative w-screen bg-cover grid grid-cols-2 p-10 mb-10'>
         <ContactCard />
         <Form/>
