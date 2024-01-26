@@ -61,14 +61,13 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps
       <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center'>
         <Philosophy />
       </section>
-      <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 grid grid-cols-2 p-5 px-40 relative'>
-        <Services />
-        <div id='serviceSpacer' className='absolute inset-0 flex items-center justify-around'>
-          <div className='bg-white h-20 w-20 rounded-full z-20' style={{ position: 'absolute', top: '35%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
-          <div className='bg-white h-20 w-20 rounded-full z-20' style={{ position: 'absolute', top: '65%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+      <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 pt-5 relative'>
+        <h2 className='w-full text-slate-600 text-2xl font-semibold text-center'>SERVICES</h2>
+        <div id='servicesWrapper' className='grid grid-cols-3 gap-5 px-20 p-5 text-center'>
+          <Services />
         </div>
       </section>
-      <div className='w-screen self-center bg-white bg-opacity-70 mb-10 p-20 flex items-center justify-center'>
+      <div className='w-screen self-center bg-white bg-opacity-70 mb-10 py-20 px-5 flex items-center justify-center'>
         <article className='border-l-2 pl-5 border-black'>
           <p className='italic playfair text-xl'>&quot;When you touch one thing with deep awareness,<br />you touch everything.&quot;</p>
           <p className='playfair text-lg'>- Lao Tzu</p>   
