@@ -4,7 +4,6 @@ import { AppProps } from '@/types';
 import spirituality from '../images/spirituality.gif';
 import spritualityImg from '../images/spirituality.png'
 import Image from 'next/image';
-import roxanne from '../images/roxanne.png';
 import meditation from '../images/meditation.png';
 
 export default function Spirtuality({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption}: AppProps) {

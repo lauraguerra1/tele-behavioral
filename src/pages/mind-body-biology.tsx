@@ -9,7 +9,7 @@ import meditating from '../images/meditating.png';
 export default function MindBody({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption}: AppProps) {
   useEffect(() => {
     const prevNavOption = navOption
-    updateNavOption('sprituality')
+    updateNavOption('mindbody')
 
     return () => updateNavOption(prevNavOption)
   }, [])
@@ -34,7 +34,7 @@ export default function MindBody({ smallScreen, menuOpen, openOrCloseMenu, updat
           </div>
           <div className='bg-white hidden lg:flex flex-col justify-center items-center p-5'>
             <div className='bg-cyan-900 bg-opacity-10 w-full h-full m-10 p-5 rounded-md flex items-center justify-center'> 
-              <Image className='h-48 w-auto' src={biology} alt='icon of a person meditating' />
+              <Image className='h-48 w-auto' src={biology} alt='icon of a beaker with a plant growing from it' />
             </div>
           </div>
           <div className='bg-white flex justify-center items-center p-5'>
@@ -44,7 +44,7 @@ export default function MindBody({ smallScreen, menuOpen, openOrCloseMenu, updat
           </div>
           <p className='p-5 text-lg bg-white'>On the other hand, the field of biology provides insights into how the body's biological processes impact mental states and cognitive function. Neurotransmitters, hormones, and other biochemical substances play a crucial role in regulating mood, emotions, and behaviors. Imbalances in these biochemical processes have been linked to mental health disorders such as depression and anxiety. Additionally, genetic factors have been shown to contribute to the risk of developing certain mental illnesses, further highlighting the biological basis of the mind-body connection.</p>
           <div className='bg-slate-100 bg-opacity-50 lg:hidden w-screen h-auto flex flex-col justify-center items-center p-5'>
-            <Image className='h-48 w-auto' src={biology} alt='icon of a person meditating' />
+            <Image className='h-48 w-auto' src={biology} alt='icon of a beaker with a plant growing from it' />
           </div>
           <div className='flex flex-col p-2 bg-white p-5'>
             <p className='italic text-lg p-5 pb-2'>&quot;The integration of psychological and biological perspectives can lead to more effective treatments for mental health disorders and overall well-being. By recognizing the profound influence of the mind on the body and vice versa, in collaboration with my patients, together we can make informed choices to optimize both your mental and physical health. Understanding the interplay between biological factors such as genetics and neurochemistry, as well as psychological factors such as thoughts, emotions, and behaviors, allows for a comprehensive approach to treatment. By addressing both the physical and mental aspects of health, we can work towards achieving long-term well-being and improved quality of life.&quot;</p>
