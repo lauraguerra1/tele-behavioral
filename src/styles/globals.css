@@ -67,6 +67,10 @@ body::before {
   background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff4f);
 }
 
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
 @media screen and (max-width: 1000px) {
   #servicesWrapper {
     display: flex;
@@ -268,5 +272,14 @@ body::before {
 
   #nav h1 {
     text-align: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

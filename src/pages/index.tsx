@@ -82,6 +82,11 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
       <section ref={sectionRefs.blog} id='blog' className='mb-10 font-extralight text-blackish-gray  w-screen h-60 p-5 flex flex-col justify-around bg-white'>
         <Link className='bg-slate-400 text-white font-semibold p-5 text-center' href='/blog'>Visit my blog (placeholder button and section)</Link>
       </section>
+      <section id='footer' className='font-extralight text-blackish-gray  w-screen h-60 p-5 flex flex-col justify-around'>
+        <h2 className='text-5xl text-center'>Roxanne Flaherty</h2>
+        <h3 className='text-4xl text-center'>Board Certified Family & Psychiatric Nurse Practitioner</h3>
+        <p className='text-xl text-center'>DNP, PMHNP-BC, FNP-C</p>
+      </section>
     </Layout>
 
   )
