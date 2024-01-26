@@ -24,7 +24,7 @@ export default function Spirtuality({ smallScreen, menuOpen, openOrCloseMenu, up
     >
     <div className='fade-in'>
       <div className='relative flex justify-center items-center w-screen h-48 bg-white bg-opacity-50'>
-        <Image src={spirituality} className='w-screen  h-48 max-w-[1300px] object-cover' alt='video of sunrays in a forest' /> 
+        <Image src={spirituality} className='w-screen  h-48 max-w-[1300px] object-cover' alt='video of a woman practicing yoga on a mountain top' /> 
         <h2 className='absolute text-center text-5xl font-bold text-white'>SPIRITUALITY</h2>
       </div>
       <article className='bg-white bg-opacity-50 lg:bg-white'>
@@ -47,7 +47,7 @@ export default function Spirtuality({ smallScreen, menuOpen, openOrCloseMenu, up
             <Image className='h-48 w-auto' src={spritualityImg} alt='icon of a person meditating' />
           </div>
           <div className='flex flex-col p-2 bg-white p-5'>
-            <p className='italic text-lg p-5 pb-2'>&quot;In this passage, I want to highlight the significance of respecting patients' choices and circumstances, including their religious and political beliefs. I strongly believe that healthcare professionals should not impose their personal agendas regarding religion and should refrain from passing judgment. Throughout my career, I have never encountered any conflicts with patients based on religion. These choices and circumstances are deeply personal and subjective, and it is not my place to make any judgments about them. I am more than willing to explore and discuss your personal beliefs, lack of beliefs, and/or the importance that your beliefs hold in your life. My main objective is to always prioritize the well-being and needs of my patients, without allowing my own biases to interfere with the care I provide.&quot;</p>
+            <p className='italic text-lg p-5 pb-2'>&quot;In this passage, I want to highlight the significance of respecting patients' choices and circumstances, including their religious and political beliefs. I strongly believe that healthcare professionals should not impose their personal agendas regarding religion and should refrain from passing judgment. Throughout my career, I have never encountered any conflicts with patients based on religion. These choices and circumstances are deeply personal and subjective, and it is not my place to make any judgments about them. I am more than willing to explore and discuss your personal beliefs, lack of beliefs, and/or the importance that your beliefs hold in your life. My main objective is to always prioritize the well-being and needs of my patients.&quot;</p>
             <p className='text-2xl p-5 pb-0'>ROXANNE FLAHERTY</p>
             <p className='text-xl p-5 pt-0'>DNP, PMHNP-BC, FNP-C</p>
           </div>
