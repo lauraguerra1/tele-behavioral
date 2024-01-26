@@ -2,15 +2,20 @@ import Form from '@/components/Form';
 import ContactCard from '@/components/ContactCard';
 import Philosophy from '@/components/Philosophy';
 import Services from '@/components/Services';
-import Head from 'next/head';
 import { AppProps } from '@/types';
 import Header from '@/components/Header';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Layout from '@/components/Layout';
+import NavBar from '@/components/NavBar';
+import { scrollTo } from "@/utils/helpers";
 
-export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps) {
-  const [navOption, setNavOption] = useState('home');
-  const updateNavOption = (option: string) => setNavOption(option);
+export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption, updateNavOption}: AppProps) {
+  useEffect(() => { 
+    console.log('useEffect')
+    scrollTo(navOption)
+  }, [])
+
   const sectionRefs = {
     home: useRef(null),
     philosophy: useRef(null),
@@ -23,7 +28,7 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setNavOption(entry.target.id);
+          updateNavOption(entry.target.id);
         }
       });
     }, {threshold: 0.5});
@@ -40,20 +45,14 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps
   }, []);
 
   return (
-    <>   
-    <Head>
-      <title>Roxanne Flaherty</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      <meta name='description' content='Roxanne Flaherty is a Board Certified Family and Psychiatric Nurse Practitioner, offering a wide range of mental health services.' />
-    </Head>
-    <main className='flex flex-col'>
-      <Header
+    <Layout
         smallScreen={smallScreen}
         menuOpen={menuOpen}
-        navOption={navOption}
         openOrCloseMenu={openOrCloseMenu}
         updateNavOption={updateNavOption}
-      />
+        navOption={navOption}
+      >
+
       <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around py-20'>
         <p id='openingText' className='text-7xl text-center'>PUT YOUR <br />MIND + BODY + SPIRIT<br /> IN GOOD HANDS</p>
         <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>
@@ -88,7 +87,7 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu}: AppProps
         <h3 className='text-4xl text-center'>Board Certified Family & Psychiatric Nurse Practitioner</h3>
         <p className='text-xl text-center'>DNP, PMHNP-BC, FNP-C</p>
       </section>
-    </main>
-    </>
+    </Layout>
+
   )
 }

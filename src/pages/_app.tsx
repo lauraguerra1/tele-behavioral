@@ -1,11 +1,23 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useRef, useEffect } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [smallScreen, setSmallScreen] = useState(false)
+  const [smallScreen, setSmallScreen] = useState(false);
+  const [navOption, setNavOption] = useState('home');
+  const router = useRouter();
+  const updateNavOption = (option: string) => setNavOption(option);
+
+  useEffect(() => { 
+    const homeOptions = ['home', 'philosophy', 'services', 'contact']
+    if (router.asPath !== '/' && homeOptions.includes(navOption)) {
+      router.push('/')
+    }
+    console.log('navOpiton is', navOption)
+  },[navOption])
 
   const openOrCloseMenu = () => setMenuOpen(prev => !prev)
 
@@ -42,6 +54,8 @@ export default function App({ Component, pageProps }: AppProps) {
       smallScreen={smallScreen}
       menuOpen={menuOpen}
       openOrCloseMenu={openOrCloseMenu}
+      navOption={navOption}
+      updateNavOption={updateNavOption}
     />
   )
 }

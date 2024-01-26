@@ -67,12 +67,6 @@ body::before {
   background: linear-gradient(to bottom, #ede6dcdf, #ede6dcb6, #ffffff4f);
 }
 
-/* @media screen and (max-width: 1216px) {
-  #servicesWrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-} */
-
 @media screen and (max-width: 1000px) {
   #servicesWrapper {
     display: flex;

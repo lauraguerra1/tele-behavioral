@@ -13,7 +13,7 @@ const images = [mentalhealth, integrative, lifestyle, supplements, biology, spir
 const SingleService = ({ name, index }: { name: string, index: number }) => {
 
   return (
-    <Link href={`/${name}`} className={`${index === 5 ? 'no-border' : ''} hover:scale-105 cursor-pointer group bg-slate-200 bg-opacity-60 single-service p-10 w-full flex flex-col items-center justify-center justify-self-center`}>
+    <Link href={`/${name.split(' ').join('-').toLowerCase()}`} className={`${index === 5 ? 'no-border' : ''} hover:scale-105 cursor-pointer group bg-slate-200 bg-opacity-60 single-service p-10 w-full flex flex-col items-center justify-center justify-self-center`}>
       <div className='icon-service-wrapper flex flex-col items-center justify-center'>
         <Image alt='brain icon' src={images[index]} className="h-24 w-auto" />
         <h3 className="text-lg md:text-xl mt-3 font-extralight px-5">{name.toUpperCase()}</h3>

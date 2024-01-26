@@ -15,4 +15,6 @@ export type AppProps = {
   smallScreen: boolean,
   menuOpen: boolean,
   openOrCloseMenu: () => void,
+  navOption: string,
+  updateNavOption: (option: string) => void, 
 }
