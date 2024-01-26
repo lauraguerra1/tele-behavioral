@@ -38,7 +38,7 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
       </div>
       <article className='bg-white bg-opacity-50 lg:bg-white'>
         <div className='flex flex-col lg:grid grid-cols-2'>
-          <div className='bg-white'>
+          <div className='bg-white h-full flex flex-col justify-center'>
             <h3 className='p-5 text-xl text-center font-extrabold'>{copy.startQuote}</h3>
             <p className='p-5 text-lg'>{copy.first}</p>
           </div>
@@ -49,8 +49,10 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
           </div>
           <div className='bg-white flex justify-center items-center p-5'>
             <Image src={images.article.src} alt={images.article.alt} className='rounded-md w-screen h-auto sm:h-72 sm:w-full object-cover' />
-          </div>
-          <p className='p-5 text-lg bg-white'>{copy.second}</p>
+            </div>
+            <div className='bg-white h-full flex flex-col justify-center'>
+              <p className='p-5 text-lg bg-white'>{copy.second}</p>
+            </div>
           </div>
           {children ? children : ''}
           <div className='bg-slate-100 bg-opacity-50 lg:hidden w-screen h-auto flex flex-col justify-center items-center p-5'>
