@@ -1,8 +1,8 @@
 import React from 'react';
 import { AppProps } from '@/types';
-import waves from '../images/waves.gif';
-import biology from '../images/biology.png';
-import meditating from '../images/meditating.png';
+import waterfall from '../images/waterfall.gif';
+import lifestyle from '../images/lifestyle.png';
+import yogis from '../images/yogis.png';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
 export default function MindBody(pageProps: AppProps) {
@@ -10,9 +10,9 @@ export default function MindBody(pageProps: AppProps) {
     <ServicePageLayout
       {...pageProps}
       images={{
-        bg: { src: waves, alt: 'video of tiny waves crashing at the shore' },
-        icon: { src: biology, alt: 'icon of a beaker with a plant growing from it' },
-        article: { src: meditating, alt: 'woman meditating with a view of palm trees' },
+        bg: { src: waterfall, alt: 'video of person relaxing in front of a lake' },
+        icon: { src: lifestyle, alt: 'icon of a person thinking about the difference facets of their life' },
+        article: { src: yogis, alt: 'group of people practicing yoga' },
       }}
       copy={{
         title: 'HABITS & LIFESTYLE',

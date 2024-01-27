@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppProps } from '@/types';
 import spirituality from '../images/spirituality.gif';
 import spritualityImg from '../images/spirituality.png';
@@ -6,6 +6,9 @@ import meditation from '../images/meditation.png';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
 export default function Spirituality(pageProps: AppProps) {
+  useEffect(() => {
+    console.log('render')
+  })
   return (
     <ServicePageLayout
       {...pageProps}
