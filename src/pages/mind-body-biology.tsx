@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppProps } from '@/types';
-import relaxing from '../images/relaxing.gif';
-import biology from '../images/biology.png';
+import relaxing from '../images/gifs/relaxing.gif';
+import biology from '../images/icons/biology.png';
 import ocean from '../images/ocean.jpg';
 import ServicePageLayout from '@/components/ServicePageLayout';
 

@@ -1,8 +1,8 @@
 import { AppProps } from "@/types";
 import NavBar, { NavBarProps } from "./NavBar";
 import Image from "next/image";
-import menuBtn from '../images/menu.png';
-import closeBtn from '../images/close.png';
+import menuBtn from '../images/icons/menu.png';
+import closeBtn from '../images/icons/close.png';
 import { ReactNode } from "react";
 
 export type HeaderProps = AppProps & NavBarProps

@@ -22,7 +22,7 @@ body {
 
 body::before {
   content: "";
-  background-image: url('../images/cairn3.jpeg');
+  background-image: url('../images/backgrounds/cairn3.jpeg');
   filter: blur(3px);
   background-repeat: no-repeat;
   position: fixed;
@@ -45,13 +45,13 @@ body::before {
 }
 
 #contact {
-  background-image: url('../images/gradient.png');
+  background-image: url('../images/backgrounds/gradient.png');
   background-repeat: no-repeat;
   opacity: 95%;
 }
 
 #home {
-  background-image: url('../images/marble.jpeg');
+  background-image: url('../images/backgrounds/marble.jpeg');
   background-repeat: no-repeat;
 }
 

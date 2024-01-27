@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppProps } from '@/types';
-import forrest from '../images/forrest.gif';
-import integrative from '../images/integrative.png';
+import forrest from '../images/gifs/forrest.gif';
+import integrative from '../images/icons/integrative.png';
 import meditating from '../images/meditating.png';
 import ServicePageLayout from '@/components/ServicePageLayout';
 

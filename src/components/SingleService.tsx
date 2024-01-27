@@ -1,11 +1,11 @@
 import Link from "next/link"
-import mentalhealth from '../images/mentalhealth.png'
+import mentalhealth from '../images/icons/mentalhealth.png'
 import Image from "next/image";
-import supplements from '../images/supplements.png';
-import integrative from '../images/integrative.png';
-import lifestyle from '../images/lifestyle.png';
-import biology from '../images/biology.png';
-import spirituality from '../images/spirituality.png';
+import supplements from '../images/icons/supplements.png';
+import integrative from '../images/icons/integrative.png';
+import lifestyle from '../images/icons/lifestyle.png';
+import biology from '../images/icons/biology.png';
+import spirituality from '../images/icons/spirituality.png';
 
 
 const images = [mentalhealth, integrative, lifestyle, supplements, biology, spirituality]

@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppProps } from '@/types';
-import runner from '../images/runner.gif';
-import lifestyle from '../images/lifestyle.png';
+import runner from '../images/gifs/runner.gif';
+import lifestyle from '../images/icons/lifestyle.png';
 import yogis from '../images/yogis.png';
 import ServicePageLayout from '@/components/ServicePageLayout';
 

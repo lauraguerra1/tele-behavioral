@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout'
 import React, { useEffect } from 'react';
 import { AppProps } from '@/types';
-import supplementsIcon from '../images/supplements.png';
+import supplementsIcon from '../images/icons/supplements.png';
 import herbaltea from '../images/herbaltea.jpg';
-import garden from '../images/garden.gif';
+import garden from '../images/gifs/garden.gif';
 import Link from 'next/link';
 import ServicePageLayout from '@/components/ServicePageLayout';
 

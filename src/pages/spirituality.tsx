@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { AppProps } from '@/types';
-import spirituality from '../images/spirituality.gif';
-import spritualityImg from '../images/spirituality.png';
+import spirituality from '../images/gifs/spirituality.gif';
+import spritualityImg from '../images/icons/spirituality.png';
 import meditation from '../images/meditation.png';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
