@@ -14,10 +14,11 @@ type ServicePageLayoutProps = AppProps & {
     second: string, 
     personal: string
   },
-  colorOverride?: string
+  colorOverride?: string,
+  removeQuotes?: boolean
 }
 
-export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption, children, images, copy, colorOverride}: ServicePageLayoutProps) {
+export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption, children, images, copy, colorOverride, removeQuotes}: ServicePageLayoutProps) {
   useEffect(() => {
     const prevNavOption = navOption
     updateNavOption(copy.title)
@@ -60,9 +61,16 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
             <Image className='h-48 w-auto' src={images.icon.src} alt={images.icon.alt} />
           </div>
           <div className='flex flex-col p-2 bg-white p-5'>
-            <p className='italic text-lg p-5 pb-2'>&quot;{copy.personal}&quot;</p>
-            <p className='text-2xl p-5 pb-0'>ROXANNE FLAHERTY</p>
-            <p className='text-xl p-5 pt-0'>DNP, PMHNP-BC, FNP-C</p>
+            {
+              removeQuotes
+                ? <p className='italic text-lg p-5 pb-2'>{copy.personal}</p>
+                : 
+                <>
+                <p className='italic text-lg p-5 pb-2'>&quot;{copy.personal}&quot;</p>
+                <p className='text-2xl p-5 pb-0'>ROXANNE FLAHERTY</p>
+                <p className='text-xl p-5 pt-0'>DNP, PMHNP-BC, FNP-C</p>
+                </>
+            }
           </div>
       </article>
     </div>
