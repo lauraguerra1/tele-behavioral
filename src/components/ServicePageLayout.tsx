@@ -15,10 +15,11 @@ type ServicePageLayoutProps = AppProps & {
     personal: string
   },
   colorOverride?: string,
+  textColor?: string,
   removeQuotes?: boolean
 }
 
-export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption, children, images, copy, colorOverride, removeQuotes}: ServicePageLayoutProps) {
+export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption, children, images, copy, colorOverride, removeQuotes, textColor}: ServicePageLayoutProps) {
   useEffect(() => {
     const prevNavOption = navOption
     updateNavOption(copy.title)
@@ -36,7 +37,7 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
     <div className='fade-in'>
       <div className='relative flex justify-center items-center w-screen h-48 bg-white bg-opacity-50'>
         <Image src={images.bg.src} className='w-screen  h-48 max-w-[1300px] object-cover' alt={images.bg.alt} /> 
-          <h2 className='absolute text-center text-3xl md:text-5xl font-bold text-white'>{copy.title}</h2>
+          <h2 className={`absolute text-center text-3xl md:text-5xl font-bold text-${textColor ?? 'white'}`}>{copy.title}</h2>
       </div>
       <article className='bg-white bg-opacity-50 lg:bg-white'>
         <div className='flex flex-col lg:grid grid-cols-2'>

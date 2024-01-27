@@ -1,18 +1,20 @@
 import React from 'react';
 import { AppProps } from '@/types';
-import waves from '../images/waves.gif';
+import relaxing from '../images/relaxing.gif';
 import biology from '../images/biology.png';
-import meditating from '../images/meditating.png';
+import ocean from '../images/ocean.jpg';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
 export default function MindBody(pageProps: AppProps) {
   return (
     <ServicePageLayout
       {...pageProps}
+      colorOverride='bg-cyan-800 bg-opacity-10'
+      textColor='black'
       images={{
-        bg: { src: waves, alt: 'video of tiny waves crashing at the shore' },
+        bg: { src: relaxing, alt: 'video of person sitting by a lake' },
         icon: { src: biology, alt: 'icon of a beaker with a plant growing from it' },
-        article: { src: meditating, alt: 'woman meditating with a view of palm trees' },
+        article: { src: ocean, alt: 'person sitting on a rock on a body of water looking into a pink sunset' },
       }}
       copy={{
         title: 'MIND, BODY & BIOLOGY',
