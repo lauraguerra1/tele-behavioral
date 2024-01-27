@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppProps } from '@/types';
-import waterfall from '../images/waterfall.gif';
+import runner from '../images/runner.gif';
 import lifestyle from '../images/lifestyle.png';
 import yogis from '../images/yogis.png';
 import ServicePageLayout from '@/components/ServicePageLayout';
@@ -10,7 +10,7 @@ export default function MindBody(pageProps: AppProps) {
     <ServicePageLayout
       {...pageProps}
       images={{
-        bg: { src: waterfall, alt: 'video of person relaxing in front of a lake' },
+        bg: { src: runner, alt: 'video of person running along the beach' },
         icon: { src: lifestyle, alt: 'icon of a person thinking about the difference facets of their life' },
         article: { src: yogis, alt: 'group of people practicing yoga' },
       }}
