@@ -59,7 +59,7 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
           <div className='bg-slate-100 bg-opacity-50 lg:hidden w-screen h-auto flex flex-col justify-center items-center p-5'>
             <Image className='h-48 w-auto' src={images.icon.src} alt={images.icon.alt} />
           </div>
-          <div className='flex flex-col p-2 bg-white p-5'>
+          <div className='flex flex-col bg-white'>
             {removeQuotes ? (
               <p className='italic text-lg p-5 pb-2'>{copy.personal}</p>
             ) : (
