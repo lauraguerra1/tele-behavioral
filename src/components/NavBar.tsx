@@ -13,8 +13,9 @@ const NavBar = ({navOption, updateNavOption}: NavBarProps) => {
       router.push('/blog')
     } else if (router.asPath === '/'){
       scrollTo(option)
+    } else {
+      updateNavOption(option)
     }
-    updateNavOption(option)
   }
 
   const navEls = ['home', 'philosophy', 'services', 'contact', 'blog'].map(option => {
