@@ -103,7 +103,7 @@ export default function Behavioral(pageProps: AppProps) {
                 {service.subsections.map(subsection => {
                   return (
                     <div className='p-5'>
-                      {subsection.title.length > 0 && <h4 className='text-lg font-bold text-center border-b-1 border-slate-400 mb-3 md:mx-[10vw]'>{subsection.title.toUpperCase()}</h4>}
+                      {subsection.title.length > 0 && <h4 className='text-lg font-extrabold text-center border-b-1 border-slate-400 mb-3 md:mx-[10vw]'>{subsection.title.toUpperCase()}</h4>}
                       {subsection.paragraphs}
                       <p className='italic pt-5'>&quot;{subsection.personal}&quot;</p>
                       <p className='text-lg pt-2'>- ROXANNE FLAHERTY</p>
