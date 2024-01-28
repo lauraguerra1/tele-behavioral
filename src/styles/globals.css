@@ -77,6 +77,7 @@ body::before {
 
 .drop-description {
   animation: grow 1s ease-in-out;
+  overflow: hidden;
 }
 
 @keyframes grow {
@@ -101,6 +102,10 @@ body::before {
   max-height: 0px;
   overflow: hidden;
   animation: shrink .3s ease-in-out;
+}
+
+.dropdown svg {
+  animation: fadeIn .3s ease-in;
 }
 
 @media screen and (max-width: 1000px) {

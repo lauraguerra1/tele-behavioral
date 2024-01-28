@@ -28,7 +28,7 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
   }, []);
   return (
     <Layout smallScreen={smallScreen} menuOpen={menuOpen} openOrCloseMenu={openOrCloseMenu} updateNavOption={updateNavOption} navOption={navOption}>
-      <div className='fade-in'>
+      <div className='fade-in md:max-w-full md:overflow-x-hidden'>
         <div className='relative flex justify-center items-center w-screen h-48 bg-white bg-opacity-50'>
           <Image src={images.bg.src} className='w-screen  h-48 max-w-[1300px] object-cover' alt={images.bg.alt} />
           <h2 className={`absolute text-center text-3xl md:text-5xl font-bold text-${textColor ?? 'white'}`}>{copy.title}</h2>
