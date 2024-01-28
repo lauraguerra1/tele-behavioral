@@ -6,6 +6,7 @@ type ServiceImage = { src: StaticImageData; alt: string };
 
 type ServicePageLayoutProps = AppProps & {
   children?: ReactNode;
+  childrenAtBottom?: boolean,
   images: { bg: ServiceImage; icon: ServiceImage; article?: ServiceImage };
   copy: {
     title: string;
@@ -19,7 +20,7 @@ type ServicePageLayoutProps = AppProps & {
   removeQuotes?: boolean;
 };
 
-export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption, children, images, copy, colorOverride, removeQuotes, textColor }: ServicePageLayoutProps) {
+export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption, children, childrenAtBottom, images, copy, colorOverride, removeQuotes, textColor }: ServicePageLayoutProps) {
   useEffect(() => {
     const prevNavOption = navOption;
     updateNavOption(copy.title);
@@ -55,7 +56,7 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
               </div>
             )}
           </div>
-          {children ? children : ''}
+          {children && !childrenAtBottom && children}
           <div className='bg-slate-100 bg-opacity-50 lg:hidden w-screen h-auto flex flex-col justify-center items-center p-5'>
             <Image className='h-48 w-auto' src={images.icon.src} alt={images.icon.alt} />
           </div>
@@ -71,6 +72,7 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
             )}
           </div>
         </article>
+        {children && childrenAtBottom && children}
       </div>
     </Layout>
   );
