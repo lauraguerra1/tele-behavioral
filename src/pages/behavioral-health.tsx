@@ -27,18 +27,26 @@ export default function Behavioral(pageProps: AppProps) {
       <div className='bg-white w-screen p-5 flex flex-col'>
         {['ADHD', 'Anxiety Disorders', 'Depression & Mood Disorders', 'Psychotherapy', 'Medication Management'].map(service => {
           return (
-            <button onClick={() => setFocusedSection(prev => prev === service ? '' : service)} key={service} className='dropdown flex justify-between items-center px-5 mb-0.5 h-8'>
-            <label className='text-white text-lg'>{service}</label>
-            {focusedSection === service ? (
-              <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6 text-white'>
-                <path strokeLinecap='round' strokeLinejoin='round' d='M12 4.5v15m7.5-7.5h-15' />
-              </svg>
-            ) : (
-              <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6 text-white'>
-                <path strokeLinecap='round' strokeLinejoin='round' d='M5 12h14' />
-              </svg>
-            )}
-          </button>
+            <>
+              <button onClick={() => setFocusedSection(prev => prev === service ? '' : service)} key={service} className='dropdown flex justify-between items-center px-5 mb-0.5 h-8'>
+                <label className='text-white text-lg'>{service}</label>
+                {focusedSection === service ? (
+                  <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6 text-white'>
+                    <path strokeLinecap='round' strokeLinejoin='round' d='M12 4.5v15m7.5-7.5h-15' />
+                  </svg>
+                ) : (
+                  <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6 text-white'>
+                    <path strokeLinecap='round' strokeLinejoin='round' d='M5 12h14' />
+                  </svg>
+                )}
+              </button>
+              <article className={`drop-description ${focusedSection === service ? '' : 'closing'}`}>
+                  <p>hello</p>
+                  <p>hello</p>
+                  <p>hello</p>
+                  <p>hello</p>
+              </article> 
+            </>
           )
         })}
       </div>

@@ -75,6 +75,34 @@ body::before {
   background-color: #9bb4c0;
 }
 
+.drop-description {
+  animation: grow 1s ease-in-out;
+}
+
+@keyframes grow {
+  0% {
+    max-height: 0px;
+  }
+  100% {
+    max-height: 100vh;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    max-height: 100vh;
+  }
+  100% {
+    max-height: 0px;
+  }
+}
+
+.closing {
+  max-height: 0px;
+  overflow: hidden;
+  animation: shrink .3s ease-in-out;
+}
+
 @media screen and (max-width: 1000px) {
   #servicesWrapper {
     display: flex;
