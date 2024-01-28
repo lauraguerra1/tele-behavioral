@@ -13,7 +13,7 @@ const Layout = ({ smallScreen, openOrCloseMenu, menuOpen, updateNavOption, navOp
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <meta name='description' content='Roxanne Flaherty is a Board Certified Family and Psychiatric Nurse Practitioner, offering a wide range of mental health services.' />
     </Head>
-    <main className='flex flex-col'>
+    <main className='flex flex-col md:max-w-full md:overflow-x-hidden'>
       <Header
         smallScreen={smallScreen}
         menuOpen={menuOpen}

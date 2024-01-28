@@ -87,7 +87,7 @@ export default function Behavioral(pageProps: AppProps) {
         {sections.map(service => {
           return (
             <>
-              <button onClick={() => setFocusedSection(prev => prev === service.title ? '' : service.title)} key={service.title} className='dropdown flex justify-between items-center px-5 mb-0.5 h-8'>
+              <button onClick={() => setFocusedSection(prev => prev === service.title ? '' : service.title)} key={service.title} className='dropdown flex justify-between items-center px-5 mb-0.5 h-10'>
                 <label className='text-white text-xl'>{service.title}</label>
                 {focusedSection !== service.title ? (
                   <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6 text-white'>
