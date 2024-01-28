@@ -71,6 +71,10 @@ body::before {
   animation: fadeIn 2s ease-in-out;
 }
 
+.dropdown {
+  background-color: #9bb4c0;
+}
+
 @media screen and (max-width: 1000px) {
   #servicesWrapper {
     display: flex;
