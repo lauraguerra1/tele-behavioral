@@ -18,7 +18,7 @@ const NavBar = ({navOption, updateNavOption}: NavBarProps) => {
     }
   }
 
-  const navEls = ['home', 'philosophy', 'services', 'contact', 'blog'].map(option => {
+  const navEls = ['home', 'philosophy', 'services', 'contact'].map(option => {
     return <button className={`${navOption === option ? 'text-gray-400' : 'text-black'} mx-5`} key={`nav${option}`} onClick={() => {navigate(option)}}>{option.toUpperCase()}</button>
   })
 

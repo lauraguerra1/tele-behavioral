@@ -20,8 +20,7 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
     home: useRef(null),
     philosophy: useRef(null),
     services: useRef(null), 
-    contact: useRef(null),
-    blog: useRef(null)
+    contact: useRef(null)
   };
   
   useEffect(() => {
@@ -78,9 +77,6 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
         <div className='col-span-2 flex flex-col md:flex-row justify-around py-5'>
           <iframe className='w-full h-64 rounded-md max-w-screen' loading="lazy" width="600" height="450" src="https://maps.google.com/maps?q=11400%20West%20Olympic%20Boulevard%20Los%20Angeles%2C%20CA%2091404&t=m&z=8&output=embed&iwloc=near" allowFullScreen />
         </div>
-      </section>
-      <section ref={sectionRefs.blog} id='blog' className='mb-10 font-extralight text-blackish-gray  w-screen h-60 p-5 flex flex-col justify-around bg-white'>
-        <Link className='bg-slate-400 text-white font-semibold p-5 text-center' href='/blog'>Visit my blog (placeholder button and section)</Link>
       </section>
       <section id='footer' className='font-extralight text-blackish-gray  w-screen h-60 p-5 flex flex-col justify-around'>
         <h2 className='text-5xl text-center'>Roxanne Flaherty</h2>
