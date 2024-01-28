@@ -2,24 +2,14 @@ import SingleService from "./SingleService"
 
 const Services = () => {
   const services = [
-    {
-      name: "Addiction Recovery", 
-      description: "Service description coming soon!"
-    }, 
-    {
-      name: "Hypnotherapy", 
-      description: "Service description coming soon!"
-    }, 
-    {
-      name: "Behavioral Health", 
-      description: "Service description coming soon!"
-    },
-    {
-      name: "Alternative Medicine", 
-      description: "Service description coming soon!"
-    }
+    { name: "Behavioral Health", link: "behavioral-health" },
+    { name: "Integrative Psychiatry", link: "integrative-psychiatry" },
+    { name: "Habits & Lifestyle", link: 'habits-and-lifestyle' },
+    { name: "Supplementation", link: 'supplementation' },
+    { name: "Mind, Body & Biology", link: "mind-body-biology" },
+    { name: "Spirituality", link: "spirituality" }
   ]
-  const serviceEls = services.map((service, index) => <SingleService key={service.name} name={service.name} description={service.description} index={index} />)
+  const serviceEls = services.map((service, index) => <SingleService key={service.name} name={service.name} link={service.link} index={index} />)
   return (<>{serviceEls}</>)
 }
 export default Services
