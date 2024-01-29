@@ -78,14 +78,22 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
           <iframe className='w-full h-64 rounded-md max-w-screen' loading="lazy" width="600" height="450" src="https://maps.google.com/maps?q=11400%20West%20Olympic%20Boulevard%20Los%20Angeles%2C%20CA%2091404&t=m&z=8&output=embed&iwloc=near" allowFullScreen />
         </div>
       </section>
-      <section id='footer' className='font-extralight text-blackish-gray  w-screen h-60 p-5 flex flex-col justify-around'>
-        <h2 className='text-5xl text-center'>Roxanne Flaherty</h2>
-        <h3 className='text-4xl text-center'>Board Certified Family & Psychiatric Nurse Practitioner</h3>
-        <p className='text-xl text-center border-slate-400 border-b-1 pb-1'>DNP, PMHNP-BC, FNP-C</p>
-        <div className='flex justify-around'>
-          <p>Copyright © 2024 Roxanne Flaherty | Powered by <Link className='underline' href='https://www.lauragarciaguerra.com' target='_blank' >LGG Web Services</Link></p>
-          <Link className='underline' href='/disclaimers'>Disclaimers & Copyright Info</Link>
-          <Link className='underline' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank' >LinkedIn</Link>
+      <section id='footer' className='font-extralight text-blackish-gray  w-screen p-5 flex flex-col justify-around p-[20px]'>
+        <h2 className='text-5xl'>Roxanne Flaherty</h2>
+        <h3 className='text-4xl'>Board Certified Family & Psychiatric Nurse Practitioner</h3>
+        <p className='text-xl pb-1'>DNP, PMHNP-BC, FNP-C</p>
+        <div className='footer-bottom flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 pt-2'>
+          <div className='md:col-span-3 lg:col-span-4'>
+            <div className='border-b-1 border-solid border-black pb-2 mb-2 md:border-0 md:p-0 md:m-0'>
+              <p id='copyright'>Copyright © 2024 Roxanne Flaherty <span>| Powered by <Link className='underline' href='https://www.lauragarciaguerra.com' target='_blank' >LGG Web Services</Link></span></p>
+              <p id='poweredBy'>Powered by <Link className='underline' href='https://www.lauragarciaguerra.com' target='_blank' >LGG Web Services</Link></p>
+            </div>
+            <Link className='underline col-span-2' href='/disclaimers'>Disclaimers & Copyright Info</Link>
+          </div>
+          <div className='flex flex-col'>
+            <Link className='underline w-[300px]' href='https://us.fullscript.com/welcome/rflaherty1683823369/store-start' target='_blank'>Supplements / Fullscripts</Link>
+            <Link className='underline' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>LinkedIn</Link>
+          </div>
         </div>
       </section>
     </Layout>
