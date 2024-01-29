@@ -30,7 +30,7 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
           updateNavOption(entry.target.id);
         }
       });
-    }, {threshold: 0.5});
+    }, {threshold: 0.4});
 
     Object.values(sectionRefs).forEach(ref => {
       if (ref.current) {
