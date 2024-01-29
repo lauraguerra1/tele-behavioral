@@ -30,7 +30,7 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
           updateNavOption(entry.target.id);
         }
       });
-    }, {threshold: 0.5});
+    }, {threshold: 0.4});
 
     Object.values(sectionRefs).forEach(ref => {
       if (ref.current) {
@@ -52,11 +52,11 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
         navOption={navOption}
       >
 
-      <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around py-20'>
-        <p id='openingText' className='text-7xl text-center'>PUT YOUR <br />MIND + BODY + SPIRIT<br /> IN GOOD HANDS</p>
+      <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around p-1 py-20'>
+        <p id='openingText' className='text-7xl text-center '>PUT YOUR <br />MIND + BODY + SPIRIT<br /> IN GOOD HANDS</p>
         <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>
       </section>
-      <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 p-20 flex justify-center items-center'>
+      <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 px-5 md:px-20 p-20 flex justify-center items-center'>
         <Philosophy />
       </section>
       <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 pt-5 relative'>
