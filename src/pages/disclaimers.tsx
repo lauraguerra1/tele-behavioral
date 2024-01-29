@@ -1,7 +1,14 @@
 import Layout from "@/components/Layout"
 import { AppProps } from "@/types"
+import { useEffect } from "react";
 
 const Disclaimers = ({smallScreen, menuOpen, openOrCloseMenu, updateNavOption, navOption}: AppProps) => {
+  useEffect(() => {
+    const prevNavOption = navOption;
+    updateNavOption('disclaimers');
+
+    return () => updateNavOption(prevNavOption);
+  }, []);
   return (
     <Layout smallScreen={smallScreen} menuOpen={menuOpen} openOrCloseMenu={openOrCloseMenu} updateNavOption={updateNavOption} navOption={navOption}>
       <div className="bg-white flex flex-col items-center pt-10 h-screen px-5">
