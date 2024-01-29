@@ -3,11 +3,10 @@ import { scrollTo } from "@/utils/helpers";
 
 export type NavBarProps = {
   navOption: string,
-  updateNavOption: (option: string) => void, 
-  shown: boolean
+  updateNavOption: (option: string) => void
 }
 
-const NavBar = ({navOption, updateNavOption, shown}: NavBarProps) => {
+const NavBar = ({navOption, updateNavOption}: NavBarProps) => {
   const router = useRouter();
   const navigate = (option: string) => {
     if (option === 'blog') {
@@ -24,7 +23,7 @@ const NavBar = ({navOption, updateNavOption, shown}: NavBarProps) => {
   })
 
   return (
-    <nav id='navBar' className={`justify-center mt-5 text-xs ${shown ? 'flex' : 'hidden'}`}>
+    <nav id='navBar' className={`flex justify-center mt-5 text-xs`}>
       {navEls}
     </nav>
   )
