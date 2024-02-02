@@ -20,9 +20,20 @@ const ContactCard = () => {
         </p>
         <p className='mt-2 italic'>*Services coming soon in FL, NY & WA</p>
       </div>
-      <a id='linkedInDesktop' className='bg-sandy text-gray-700 px-4 my-4 py-2 self-start' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>
+      <div className='flex flex-col md:flex-row my-4 self-start'>
+        <a id='linkedInDesktop' className='self-start bg-sandy text-gray-700 text-center w-32 py-2 my-1 md:mr-2' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>
+          Visit LinkedIn
+        </a>
+        <a className='self-start bg-sandy text-gray-700 text-center w-32 py-2 my-1 md:ml-2' href='https://secure.helloalma.com/providers/roxanne-flaherty/' target='_blank'>
+          Visit Alma
+        </a>
+      </div>
+      {/* <a id='linkedInDesktop' className='self-start bg-sandy text-gray-700 text-center w-32 py-2 my-2' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>
         Visit LinkedIn
       </a>
+      <a className='self-start bg-sandy text-gray-700 text-center w-32 py-2 my-2' href='https://secure.helloalma.com/providers/roxanne-flaherty/' target='_blank'>
+        Visit Alma
+      </a> */}
     </article>
   );
 };
