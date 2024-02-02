@@ -8,31 +8,34 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import NavBar from '@/components/NavBar';
-import { scrollTo } from "@/utils/helpers";
+import { scrollTo } from '@/utils/helpers';
 
-export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption, updateNavOption}: AppProps) {
-  useEffect(() => { 
-    console.log('useEffect')
-    scrollTo(navOption)
-  }, [])
+export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption, updateNavOption }: AppProps) {
+  useEffect(() => {
+    console.log('useEffect');
+    scrollTo(navOption);
+  }, []);
 
   const sectionRefs = {
     home: useRef(null),
     philosophy: useRef(null),
-    services: useRef(null), 
-    contact: useRef(null)
+    services: useRef(null),
+    contact: useRef(null),
   };
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateNavOption(entry.target.id);
-        }
-      });
-    }, {threshold: 0.5});
 
-    Object.values(sectionRefs).forEach(ref => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            updateNavOption(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    Object.values(sectionRefs).forEach((ref) => {
       if (ref.current) {
         observer.observe(ref.current);
       }
@@ -44,17 +47,17 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
   }, []);
 
   return (
-    <Layout
-        smallScreen={smallScreen}
-        menuOpen={menuOpen}
-        openOrCloseMenu={openOrCloseMenu}
-        updateNavOption={updateNavOption}
-        navOption={navOption}
-      >
-
+    <Layout smallScreen={smallScreen} menuOpen={menuOpen} openOrCloseMenu={openOrCloseMenu} updateNavOption={updateNavOption} navOption={navOption}>
       <section ref={sectionRefs.home} id='home' className='w-87vw self-center bg-cover min-h-650px mb-5 flex flex-col items-center justify-around p-1 py-20'>
-        <p id='openingText' className='text-7xl text-center '>PUT YOUR <br />MIND + BODY + SPIRIT<br /> IN GOOD HANDS</p>
-        <p className='text-center italic playfair'>CREATIVE EMPOWERMENT THROUGH <br/>LOVE, SUPPORT, AND EDUCATION</p>
+        <p id='openingText' className='text-7xl text-center '>
+          PUT YOUR <br />
+          MIND + BODY + SPIRIT
+          <br /> IN GOOD HANDS
+        </p>
+        <p className='text-center italic playfair'>
+          CREATIVE EMPOWERMENT THROUGH <br />
+          LOVE, SUPPORT, AND EDUCATION
+        </p>
       </section>
       <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 px-5 md:px-20 p-20 flex justify-center items-center'>
         <Philosophy />
@@ -67,15 +70,19 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
       </section>
       <div className='w-screen self-center bg-white bg-opacity-70 mb-10 py-20 px-5 flex items-center justify-center'>
         <article className='border-l-2 pl-5 border-black'>
-          <p className='italic playfair text-xl'>&quot;When you touch one thing with deep awareness,<br />you touch everything.&quot;</p>
-          <p className='playfair text-lg'>- Lao Tzu</p>   
+          <p className='italic playfair text-xl'>
+            &quot;When you touch one thing with deep awareness,
+            <br />
+            you touch everything.&quot;
+          </p>
+          <p className='playfair text-lg'>- Lao Tzu</p>
         </article>
       </div>
-      <section ref={sectionRefs.contact}  id='contact' className='relative w-screen bg-cover grid grid-cols-2 p-10 mb-10'>
+      <section ref={sectionRefs.contact} id='contact' className='relative w-screen bg-cover grid grid-cols-2 p-10 mb-10'>
         <ContactCard />
-        <Form/>
+        <Form />
         <div className='col-span-2 flex flex-col md:flex-row justify-around py-5'>
-          <iframe className='w-full h-64 rounded-md max-w-screen' loading="lazy" width="600" height="450" src="https://maps.google.com/maps?q=11400%20West%20Olympic%20Boulevard%20Los%20Angeles%2C%20CA%2091404&t=m&z=8&output=embed&iwloc=near" allowFullScreen />
+          <iframe className='w-full h-64 rounded-md max-w-screen' loading='lazy' width='600' height='450' src='https://maps.google.com/maps?q=11400%20West%20Olympic%20Boulevard%20Los%20Angeles%2C%20CA%2091404&t=m&z=8&output=embed&iwloc=near' allowFullScreen />
         </div>
       </section>
       <section id='footer' className='font-extralight text-blackish-gray  w-screen p-5 flex flex-col justify-around p-[20px]'>
@@ -85,18 +92,42 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
         <div className='footer-bottom flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 pt-2'>
           <div className='md:col-span-3 lg:col-span-4'>
             <div className='border-b-1 border-solid border-black pb-2 mb-2 md:border-0 md:p-0 md:m-0'>
-              <p id='copyright'>Copyright © 2024 Roxanne Flaherty <span>| Powered by <Link className='underline' href='https://www.lauragarciaguerra.com' target='_blank' >LGG Web Services</Link></span></p>
-              <p id='poweredBy'>Powered by <Link className='underline' href='https://www.lauragarciaguerra.com' target='_blank' >LGG Web Services</Link></p>
+              <p id='copyright'>
+                Copyright © 2024 Roxanne Flaherty{' '}
+                <span>
+                  | Powered by{' '}
+                  <Link className='underline' href='https://www.lauragarciaguerra.com' target='_blank'>
+                    LGG Web Services
+                  </Link>
+                </span>
+              </p>
+              <p id='poweredBy'>
+                Powered by{' '}
+                <Link className='underline' href='https://www.lauragarciaguerra.com' target='_blank'>
+                  LGG Web Services
+                </Link>
+              </p>
             </div>
-            <Link className='underline col-span-2' href='/disclaimers'>Disclaimers & Copyright Info</Link>
+            <Link className='underline col-span-2' href='/disclaimers'>
+              Disclaimers & Copyright Info
+            </Link>
           </div>
           <div className='flex flex-col'>
-            <Link className='underline w-[300px]' href='https://us.fullscript.com/welcome/rflaherty1683823369/store-start' target='_blank'>Supplements / Fullscripts</Link>
-            <Link className='underline' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>LinkedIn</Link>
+            <Link className='underline w-[300px]' href='https://us.fullscript.com/welcome/rflaherty1683823369/store-start' target='_blank'>
+              Supplements / Fullscripts
+            </Link>
+            <div className='flex w-[300px]'>
+              <Link className='underline' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>
+                LinkedIn
+              </Link>
+              <p className='mx-2'>|</p>
+              <Link className='underline' href='https://secure.helloalma.com/providers/roxanne-flaherty/' target='_blank'>
+                Alma
+              </Link>
+            </div>
           </div>
         </div>
       </section>
     </Layout>
-
-  )
+  );
 }
