@@ -59,7 +59,7 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
           LOVE, SUPPORT, AND EDUCATION
         </p>
       </section>
-      <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 px-5 md:px-20 p-20 flex justify-center items-center'>
+      <section ref={sectionRefs.philosophy} id='philosophy' className='w-screen self-center bg-white mb-10 px-5 lg:px-20 py-10 flex justify-center items-center'>
         <Philosophy />
       </section>
       <section ref={sectionRefs.services} id='services' className='w-screen bg-white mb-10 pt-5 relative'>
@@ -86,7 +86,7 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
         </div>
       </section>
       <section id='footer' className='font-extralight text-blackish-gray  w-screen p-5 flex flex-col justify-around p-[20px]'>
-        <h2 className='text-5xl'>Roxanne Flaherty</h2>
+        <h2 className='text-5xl'>Dr. Roxanne Flaherty</h2>
         <h3 className='text-4xl'>Board Certified Family & Psychiatric Nurse Practitioner</h3>
         <p className='text-xl pb-1'>DNP, PMHNP-BC, FNP-C</p>
         <div className='footer-bottom flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 pt-2'>

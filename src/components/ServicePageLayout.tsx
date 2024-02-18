@@ -6,7 +6,7 @@ type ServiceImage = { src: StaticImageData; alt: string };
 
 type ServicePageLayoutProps = AppProps & {
   children?: ReactNode;
-  childrenAtBottom?: boolean,
+  childrenAtBottom?: boolean;
   images: { bg: ServiceImage; icon: ServiceImage; article?: ServiceImage };
   copy: {
     title: string;
@@ -66,7 +66,7 @@ export default function ServicePageLayout({ smallScreen, menuOpen, openOrCloseMe
             ) : (
               <>
                 <p className='italic text-lg p-5 pb-2'>&quot;{copy.personal}&quot;</p>
-                <p className='text-2xl p-5 pb-0'>ROXANNE FLAHERTY</p>
+                <p className='text-2xl p-5 pb-0'>DR. ROXANNE FLAHERTY</p>
                 <p className='text-xl p-5 pt-0'>DNP, PMHNP-BC, FNP-C</p>
               </>
             )}
