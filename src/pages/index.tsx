@@ -116,9 +116,15 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
             <Link className='underline w-[300px]' href='https://us.fullscript.com/welcome/rflaherty1683823369/store-start' target='_blank'>
               Supplements / Fullscripts
             </Link>
-            <Link className='underline' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>
-              LinkedIn
-            </Link>
+            <div className='flex w-[300px]'>
+              <Link className='underline' href='https://www.linkedin.com/in/roxanne-flaherty-881908298/' target='_blank'>
+                LinkedIn
+              </Link>
+              <p className='mx-2'>|</p>
+              <Link className='underline' href='https://secure.helloalma.com/providers/roxanne-flaherty/' target='_blank'>
+                Alma
+              </Link>
+            </div>
           </div>
         </div>
       </section>
