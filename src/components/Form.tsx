@@ -49,7 +49,7 @@ const Form = () => {
 
   const formInputs = Object.keys(formData).map((field) => {
     if (field === `botCatcher`) {
-      return <input type='text' name='phone' style={{display: `none`}} value={formData.botCatcher} onChange={(e) => changeInput('botCatcher', e.target.value)} autoComplete='off' tabIndex={-1} />;
+      return <input key="botCatcher" type='text' name='phone' style={{display: `none`}} value={formData.botCatcher} onChange={(e) => changeInput('botCatcher', e.target.value)} autoComplete='off' tabIndex={-1} />;
     }
     return (
       <div key={field} className={`${field === 'message' || field === 'subject' ? 'col-span-2 flex-col' : ''} flex border-b-1 border-white ${field}-container`}>
