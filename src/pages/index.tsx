@@ -12,7 +12,6 @@ import { scrollTo } from '@/utils/helpers';
 
 export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption, updateNavOption }: AppProps) {
   useEffect(() => {
-    console.log('useEffect');
     scrollTo(navOption);
   }, []);
 

@@ -16,7 +16,6 @@ export default function App({ Component, pageProps }: AppProps) {
     if (router.asPath !== '/' && homeOptions.includes(navOption)) {
       router.push('/')
     }
-    console.log('navOpiton is', navOption)
   },[navOption])
 
   const openOrCloseMenu = () => setMenuOpen(prev => !prev)

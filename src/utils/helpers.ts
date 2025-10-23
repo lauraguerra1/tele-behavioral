@@ -1,6 +1,5 @@
 export const scrollTo = (navOption: string) => {
   const itemToScroll = document.querySelector(`#${navOption}`)
-  console.log('itemto scrool', navOption)
   if (itemToScroll) {
     
     const scrollPosition = itemToScroll.getBoundingClientRect().top - 150;

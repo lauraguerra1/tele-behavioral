@@ -8,6 +8,7 @@ const Form = () => {
     email: '',
     subject: '',
     message: '',
+    botCatcher: '',
   };
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -18,15 +19,20 @@ const Form = () => {
 
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSending(true);
-    try {
-      await sendEmail({ ...formData, subject: `Patient Inquiry${formData.subject.length ? ': ' + formData.subject : ''}` });
-      setSuccess(true);
-      setFormData(freshForm);
-    } catch (error) {
+    if (!formData.botCatcher) {
+      const { botCatcher, ...remainingFields } = formData;
+      setSending(true);
+      try {
+        await sendEmail({ ...remainingFields, subject: `Patient Inquiry${formData.subject.length ? ': ' + formData.subject : ''}` });
+        setSuccess(true);
+        setFormData(freshForm);
+      } catch (error) {
+        setError(true);
+      }
+      setSending(false);
+    } else {
       setError(true);
     }
-    setSending(false);
   };
 
   const resetFeedback = () => {
@@ -42,6 +48,9 @@ const Form = () => {
   };
 
   const formInputs = Object.keys(formData).map((field) => {
+    if (field === `botCatcher`) {
+      return <input type='text' name='phone' style={{display: `none`}} value={formData.botCatcher} onChange={(e) => changeInput('botCatcher', e.target.value)} autoComplete='off' tabIndex={-1} />;
+    }
     return (
       <div key={field} className={`${field === 'message' || field === 'subject' ? 'col-span-2 flex-col' : ''} flex border-b-1 border-white ${field}-container`}>
         <label className='pr-2' htmlFor={field}>{`${field.charAt(0).toUpperCase()}${field.slice(1)}${field !== 'subject' ? '*' : ''}`}</label>

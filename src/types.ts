@@ -8,7 +8,8 @@ export type Submission = Indexable & {
   name: string, 
   email: string, 
   subject: string,
-  message: string
+  message: string, 
+  botCatcher: string
 }
 
 export type AppProps = {

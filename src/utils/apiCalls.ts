@@ -5,7 +5,7 @@ const handleError = (response: Response) => {
   }
   return response.json()
 }
-export const sendEmail = async (form: Submission) => {
+export const sendEmail = async (form: Omit<Submission, 'botCatcher'>) => {
   try {
     const response = await fetch('/api/mail', {
       method: "POST", 
