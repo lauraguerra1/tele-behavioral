@@ -1,17 +1,43 @@
 const nodemailer = require('nodemailer');
 
-export default function mail(req, res) {
-  const { name, email, subject, message } = req.body
+export default async function mail(req, res) {
+  const { name, email, subject, message, reCaptchaToken } = req.body;
+
+  const params = new URLSearchParams();
+  params.append('secret', process.env.RECAPTCHA_SERVER_SIDE_KEY); // server-side key
+  params.append('response', reCaptchaToken); // token from client
+
+  const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+    method: 'POST',
+    body: params,
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  });
+
+  const verification = await response.json();
+
+  if (!verification.success) {
+    return res.status(400).json({ message: 'reCAPTCHA verification failed' });
+  }
+
+  // Optional: check the action
+  if (verification.action !== 'CONTACT') {
+    return res.status(400).json({ message: 'reCAPTCHA action mismatch' });
+  }
+
+  // Optional: check the score
+  if (verification.score < 0.5) {
+    return res.status(400).json({ message: 'Suspicious activity detected' });
+  }
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
-    secure: true, 
+    secure: true,
     auth: {
       user: process.env.MAILER_EMAIL,
-      pass: process.env.MAILER_PASS 
-    }  
-  })
+      pass: process.env.MAILER_PASS,
+    },
+  });
 
   const createEmail = (headerImg, message) => {
     return `<html>
@@ -69,12 +95,12 @@ export default function mail(req, res) {
       <div class="message">${message}</div>
     </body> 
   </html>
-  `
-  }
+  `;
+  };
 
   const adminMailOptions = {
     from: process.env.MAILER_EMAIL,
-    to: process.env.RECEPIENT_EMAIL, 
+    to: process.env.RECEPIENT_EMAIL,
     subject,
     text: `New message from ${name} \n Subject: ${subject} \n Message: ${message} \n Email Address: ${email}`,
     html: createEmail(
@@ -83,16 +109,16 @@ export default function mail(req, res) {
       <p>Here's a message from the patient:</p>
       <p>${message}</p>
       <p>Patient Email: ${email}</p>`
-    ), 
-    replyTo: email
+    ),
+    replyTo: email,
   };
 
   const patientMailOptions = {
     from: process.env.MAILER_EMAIL,
-    to: email, 
-    subject: "Thank You For Your Inquiry",
+    to: email,
+    subject: 'Thank You For Your Inquiry',
     text: `Thank You For Your Inquiry! \nDear ${name}, \nI appreciate you taking the time to contact me with your inquiry. Your message is important to me, and I want to ensure you receive the attention it deserves. \nPlease be advised that this email address is not monitored on a constant basis and is not an emergency hotline. If you are experiencing a mental health emergency or need immediate assistance, please contact your local emergency services. \nI strive to provide the best possible care to each individual, and I understand the importance of timely responses. Rest assured that I have received your message, and I will make every effort to get back to you within 48-72 hours. \nIn the meantime, if your matter requires urgent attention, I strongly recommend reaching out to the appropriate emergency services in your area. Thank you for your understanding and patience. I look forward to assisting you. \nBest regards, \nRoxanne Flaherty \nDNP, PMHNP-BC, FNP-C \nTel: 323-433-9935 \nEmail: admin@roxanneflaherty.com`,
-    html:createEmail(
+    html: createEmail(
       'https://i.imgur.com/UuOpVoV.png',
       `<h1>Thank You For Your Inquiry!</h1>
       <p>Dear ${name}, <br></br>I appreciate you taking the time to contact me with your inquiry. Your message is important to me, and I want to ensure you receive the attention it deserves.</p>
@@ -103,24 +129,23 @@ export default function mail(req, res) {
       DNP, PMHNP-BC, FNP-C<br/>
       Tel: 323-433-9935<br/>
       Email: admin@roxanneflaherty.com</p>`
-    ), 
-    replyTo: process.env.MAILER_EMAIL
+    ),
+    replyTo: process.env.MAILER_EMAIL,
   };
 
   transporter.sendMail(adminMailOptions, (error) => {
     if (error) {
-      console.log('error sending mail to admin', error)
-      res.status(500).json(error)
+      console.log('error sending mail to admin', error);
+      res.status(500).json(error);
     } else {
       transporter.sendMail(patientMailOptions, (err, info) => {
         if (err) {
-          console.log('error sending mail to patient', error)
-          res.status(500).json(err)
+          console.log('error sending mail to patient', error);
+          res.status(500).json(err);
         } else {
-          res.status(200).json({message: info.response})
+          res.status(200).json({ message: info.response });
         }
-      })
+      });
     }
-  })
-
+  });
 }

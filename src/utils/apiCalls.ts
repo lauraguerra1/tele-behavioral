@@ -1,11 +1,11 @@
-import { Submission } from "../types";
+import { FormSubmission } from "../types";
 const handleError = (response: Response) => {
   if (!response.ok) {
     throw new Error(`Error: ${response.status} -- Please try again.`)
   }
   return response.json()
 }
-export const sendEmail = async (form: Omit<Submission, 'botCatcher'>) => {
+export const sendEmail = async (form: FormSubmission) => {
   try {
     const response = await fetch('/api/mail', {
       method: "POST", 

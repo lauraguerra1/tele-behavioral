@@ -12,6 +12,10 @@ export type Submission = Indexable & {
   botCatcher: string
 }
 
+export type FormSubmission = Omit<Submission, 'botCatcher'> & {
+  reCaptchaToken: string
+}
+
 export type AppProps = {
   smallScreen: boolean,
   menuOpen: boolean,

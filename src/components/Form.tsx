@@ -14,16 +14,27 @@ const Form = () => {
   const [error, setError] = useState(false);
   const [formData, setFormData] = useState<Submission>(freshForm);
   const [sending, setSending] = useState(false);
+  const [recpatchaReady, setRecaptchaReady] = useState(false);
 
   useEffect(() => resetFeedback, []);
+  useEffect(() => {
+    grecaptcha.ready(async () => {
+      setRecaptchaReady(true);
+    });
+  }, []);
 
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!formData.botCatcher) {
       const { botCatcher, ...remainingFields } = formData;
       setSending(true);
       try {
-        await sendEmail({ ...remainingFields, subject: `Patient Inquiry${formData.subject.length ? ': ' + formData.subject : ''}` });
+        if (!recpatchaReady) {
+          throw new Error('Recaptcha Not Yet Ready');
+        }
+        const token = await grecaptcha.execute('6Ldq7PMrAAAAAAO-LzhnxQ2U4vhkCcFYLO4pEkp1', { action: 'CONTACT' });
+        await sendEmail({ ...remainingFields, subject: `Patient Inquiry${formData.subject.length ? ': ' + formData.subject : ''}`, reCaptchaToken: token });
         setSuccess(true);
         setFormData(freshForm);
       } catch (error) {
@@ -49,7 +60,7 @@ const Form = () => {
 
   const formInputs = Object.keys(formData).map((field) => {
     if (field === `botCatcher`) {
-      return <input key="botCatcher" type='text' name='phone' style={{display: `none`}} value={formData.botCatcher} onChange={(e) => changeInput('botCatcher', e.target.value)} autoComplete='off' tabIndex={-1} />;
+      return <input key='botCatcher' type='text' name='phone' style={{ display: `none` }} value={formData.botCatcher} onChange={(e) => changeInput('botCatcher', e.target.value)} autoComplete='off' tabIndex={-1} />;
     }
     return (
       <div key={field} className={`${field === 'message' || field === 'subject' ? 'col-span-2 flex-col' : ''} flex border-b-1 border-white ${field}-container`}>
@@ -58,7 +69,6 @@ const Form = () => {
       </div>
     );
   });
-
   return (
     <form onSubmit={submitForm} className='grid grid-cols-2 gap-4 text-white mt-10'>
       {formInputs}
