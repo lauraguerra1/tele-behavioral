@@ -10,6 +10,7 @@ const Layout = ({ smallScreen, openOrCloseMenu, menuOpen, updateNavOption, navOp
     <>
       <Head>
         <title>Roxanne Flaherty</title>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src='https://www.google.com/recaptcha/api.js?render=6Ldq7PMrAAAAAAO-LzhnxQ2U4vhkCcFYLO4pEkp1'></script>
         <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
         <meta name='description' content='Roxanne Flaherty is a Board Certified Family and Psychiatric Nurse Practitioner, offering a wide range of mental health services.' />
