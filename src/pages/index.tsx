@@ -85,9 +85,10 @@ export default function Home({ smallScreen, menuOpen, openOrCloseMenu, navOption
         </div>
       </section>
       <section id='footer' className='font-extralight text-blackish-gray  w-screen p-5 flex flex-col justify-around p-[20px]'>
-        <h2 className='text-5xl'>Dr. Roxanne Flaherty</h2>
+        <h2 className='text-5xl'>Roxanne Flaherty</h2>
         <h3 className='text-4xl'>Board Certified Family & Psychiatric Nurse Practitioner</h3>
         <p className='text-xl pb-1'>DNP, PMHNP-BC, FNP-C</p>
+        <p className='text-sm'>Roxanne Flaherty, DNP, is a licensed Nurse Practitioner in multiple states. In California, “Dr.” denotes her doctoral degree, not physician status.</p>
         <div className='footer-bottom flex flex-col md:grid md:grid-cols-4 lg:grid-cols-5 pt-2'>
           <div className='md:col-span-3 lg:col-span-4'>
             <div className='border-b-1 border-solid border-black pb-2 mb-2 md:border-0 md:p-0 md:m-0'>
